@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     {
         pf = FindObjectOfType<PathFinder>();
         mc = FindObjectOfType<MapController>();
-        tilemap = mc.walkable;
+        tilemap = mc.spriteMap;
     }
 
     public void spawnEnemies(int amount)
@@ -44,21 +44,21 @@ public class EnemySpawner : MonoBehaviour
     {
         tiles = pf.tiles;
         int index = Random.Range(0, tiles.Count);
-        Instantiate(enemy, tilemap.CellToWorld(tiles[index]), Quaternion.identity);
+        Instantiate(enemy, tilemap.CellToWorld(tiles[index]) + new Vector3Int(0, 0, -1), Quaternion.identity);
     }
 
     public void spawnBear()
     {
         tiles = pf.tiles;
         int index = Random.Range(0, tiles.Count);
-        Instantiate(bear, tilemap.CellToWorld(tiles[index]), Quaternion.identity);
+        Instantiate(bear, tilemap.CellToWorld(tiles[index]) + new Vector3Int(0, 0, -1), Quaternion.identity);
     }
 
     public void spawnMite()
     {
         tiles = pf.tiles;
         int index = Random.Range(0, tiles.Count);
-        Instantiate(mite, tilemap.CellToWorld(tiles[index]), Quaternion.identity);
+        Instantiate(mite, tilemap.CellToWorld(tiles[index]) + new Vector3Int(0, 0, -1), Quaternion.identity);
     }
 
     public void spawnMites()
@@ -73,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
                     int spawn = Random.Range(0, 2);
                     if (spawn == 1)
                     {
-                        Instantiate(mite, tilemap.CellToWorld(tiles[index] + new Vector3Int(x, y)), Quaternion.identity);
+                        Instantiate(mite, tilemap.CellToWorld(tiles[index] + new Vector3Int(x, y)) + new Vector3Int(0, 0, -1), Quaternion.identity);
                     }
                 }
                 
