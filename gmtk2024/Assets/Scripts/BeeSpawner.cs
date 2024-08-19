@@ -23,7 +23,7 @@ public class BeeSpawner : MonoBehaviour
     public void SpawnBee()
     {
         hv.bees++;
-        GameObject newBee = Instantiate(beePrefab, tilemap.CellToWorld(mc.startTile), Quaternion.identity);
+        GameObject newBee = Instantiate(beePrefab, tilemap.CellToWorld(mc.startTile) + new Vector3Int(0, 0, -1), Quaternion.identity);
         SpriteRenderer newSprite = newBee.GetComponent<SpriteRenderer>();
         Color[] colors = new Color[6];
         colors[0] = Color.red;

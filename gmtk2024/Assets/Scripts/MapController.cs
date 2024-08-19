@@ -8,6 +8,7 @@ public class MapController : MonoBehaviour
 
     [SerializeField] public Tilemap walkable;
     [SerializeField] public Tilemap unwalkable;
+    [SerializeField] Tile entranceTile;
     [SerializeField] Tile pondTile;
     [SerializeField] Tile meadowTile;
     [SerializeField] Tile beekeeperTile;
@@ -30,12 +31,13 @@ public class MapController : MonoBehaviour
         unwalkable.SetTile(center, queenbeeTile);
         unwalkable.SetTile(center + Vector3Int.up, nurseryTile);
         hv.nurseryTiles++;
+        walkable.SetTile(startTile, entranceTile);
 
-        List<Vector3Int> positions = new List<Vector3Int> {startTile, startTile + Vector3Int.right, startTile + Vector3Int.left, 
+        List<Vector3Int> positions = new List<Vector3Int> {startTile + Vector3Int.right, startTile + Vector3Int.left, 
             startTile + new Vector3Int(0, -4, 0), startTile + new Vector3Int(-1, -4, 0), startTile + new Vector3Int(1, -4, 0), 
             startTile + new Vector3Int(1, -1, 0), startTile + new Vector3Int(-2, -1, 0), startTile + new Vector3Int(2, -2, 0), 
             startTile + new Vector3Int(-2, -2, 0), startTile + new Vector3Int(1, -3, 0), startTile + new Vector3Int(-2, -3, 0)};
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 11; i++)
         {
             int posIndex = Random.Range(0, positions.Count);
             if (i < 2)
@@ -46,11 +48,11 @@ public class MapController : MonoBehaviour
             {
                 walkable.SetTile(positions[posIndex], woodlandTile);
                 hv.woodlandTiles++;
-            } else if (i < 7)
+            } else if (i < 6)
             {
                 walkable.SetTile(positions[posIndex], meadowTile);
                 hv.meadowTiles++;
-            } else if (i < 10)
+            } else if (i < 9)
             {
                 walkable.SetTile(positions[posIndex], pondTile);
                 hv.pondTiles++;
