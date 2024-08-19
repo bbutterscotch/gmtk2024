@@ -33,6 +33,7 @@ public class CycleController : MonoBehaviour
     {
         for (int i = 0; i < hv.nurseryTiles*multiplier; i++)
         {
+            Debug.Log("Bee Spawned");
             beeSpawner.SpawnBee();
             yield return new WaitForSeconds(0.3f);
         }
