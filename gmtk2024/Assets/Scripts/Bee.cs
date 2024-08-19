@@ -20,6 +20,7 @@ public class Bee : MonoBehaviour
     private int wax = 0;
     private int royalJelly = 0;
     private int startingCycle;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +34,13 @@ public class Bee : MonoBehaviour
         startingCycle = cc.currentCycle;
         path = pf.path;
         tiles = pf.tiles;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(moveTile(delay, 0));
     }
 
     IEnumerator moveTile(float delayTime, int pathIndex)
     {
-        Vector3 distance = tilemap.CellToWorld(tiles[path[pathIndex]]) - transform.position;
+        Vector3 distance = tilemap.CellToWorld(tiles[path[pathIndex]]) - new Vector3Int(0, 0, 1) - transform.position;
         StartCoroutine(moveOverTime(distance));
         //transform.position = tilemap.CellToWorld(tiles[path[pathIndex]]);
         TileBase currTile = tilemap.GetTile(tiles[path[pathIndex]]);
@@ -98,6 +100,13 @@ public class Bee : MonoBehaviour
 
     IEnumerator moveOverTime(Vector3 distance)
     {
+        if (distance.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        } else
+        {
+            spriteRenderer.flipX = false;
+        }
         for (int i = 0; i < 6; i++)
         {
             transform.position += distance / 6;

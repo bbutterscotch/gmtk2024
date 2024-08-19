@@ -23,7 +23,7 @@ public class BearController : MonoBehaviour
     {
         mc = FindObjectOfType<MapController>();
         tilemap = mc.walkable;
-        Vector3 distance = tilemap.CellToWorld(mc.center) - transform.position;
+        Vector3 distance = tilemap.CellToWorld(mc.center) + new Vector3Int(0, 0, -1) - transform.position;
         StartCoroutine(moveToHive(distance));
         hv = FindObjectOfType<HiveResources>();
     }

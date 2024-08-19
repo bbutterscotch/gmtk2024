@@ -8,14 +8,17 @@ public class MapController : MonoBehaviour
 
     [SerializeField] public Tilemap walkable;
     [SerializeField] public Tilemap unwalkable;
-    [SerializeField] Tile entranceTile;
+    [SerializeField] public Tilemap spriteMap;
+    [SerializeField] AnimatedTile entranceTile;
     [SerializeField] Tile pondTile;
     [SerializeField] Tile meadowTile;
     [SerializeField] Tile beekeeperTile;
     [SerializeField] Tile woodlandTile;
     [SerializeField] Tile gardenTile;
     [SerializeField] Tile nurseryTile;
+    [SerializeField] AnimatedTile queenbeedropTile;
     [SerializeField] Tile queenbeeTile;
+    [SerializeField] AnimatedTile queenbeeIdleTile;
     HiveResources hv;
 
     public Vector3Int center = new Vector3Int(0, 0, 0);
@@ -28,7 +31,7 @@ public class MapController : MonoBehaviour
         hv = FindObjectOfType<HiveResources>();
 
         // 12 tiles to start + 1 nursery tile
-        unwalkable.SetTile(center, queenbeeTile);
+        unwalkable.SetTile(center, queenbeedropTile);
         unwalkable.SetTile(center + Vector3Int.up, nurseryTile);
         hv.nurseryTiles++;
         walkable.SetTile(startTile, entranceTile);
@@ -63,7 +66,23 @@ public class MapController : MonoBehaviour
             }
             positions.RemoveAt(posIndex);
         }
+        StartCoroutine(UpdateQueenTile());
+    }
 
+    IEnumerator UpdateQueenTile()
+    {
+        yield return new WaitForSeconds(queenbeedropTile.m_AnimatedSprites.Length / queenbeedropTile.m_MinSpeed);
+        unwalkable.SetTile(center, queenbeeTile);
+        StartCoroutine(IdleQueenTile());
+    }
+
+    IEnumerator IdleQueenTile()
+    {
+        yield return new WaitForSeconds(5f);
+        unwalkable.SetTile(center, queenbeeIdleTile);
+        yield return new WaitForSeconds(queenbeeIdleTile.m_AnimatedSprites.Length / queenbeeIdleTile.m_MinSpeed);
+        unwalkable.SetTile(center, queenbeeTile);
+        StartCoroutine(IdleQueenTile());
     }
 
     // Update is called once per frame

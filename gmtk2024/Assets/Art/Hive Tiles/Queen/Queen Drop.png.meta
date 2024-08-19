@@ -1,0 +1,677 @@
+fileFormatVersion: 2
+guid: 0720676f1fd692a429195fb183fd0fa0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Queen Drop_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1504
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11ba02b832496640979bf4d6ace95b6
+      internalID: 553095967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1504
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f789d8c46e1274a87c73a30095e88a
+      internalID: 277442456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1504
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f885a44f3270fa045904152404e8b7d0
+      internalID: 1648915121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1504
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3afbaf89704fb419c84957b09a3332
+      internalID: 1516362621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1504
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f21a1968abc8a245bee6e3532cd1b06
+      internalID: 1329605282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1128
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695146ef5010fa743bdcc4175cbf2e1e
+      internalID: -1449323207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1128
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae280b9581a3af498eb3e1b793bdc27
+      internalID: -938103534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1128
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10d4ff43f31371448bbb56e587feb74
+      internalID: -1964747986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1128
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd6e616b84bc4749ac0a6c8be20b4ad
+      internalID: 1731854251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1128
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cea7548792dd140af7aace748ec95f
+      internalID: -2101966286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f11832de3fd3604fb6c9ea595dcaf9e
+      internalID: -47724502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 752
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1cc036f6e32a94cbb3bdd2caef1935
+      internalID: 1308104725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 752
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec2b91caa10ce5449487669d9f8dba0
+      internalID: 86881175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_13
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 752
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a96566c6b78594ea9fc8afdcd1052a
+      internalID: 929014392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 752
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87783e383f2a78458bdc69fed7b9c2e
+      internalID: 250313768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e740e1ae54f224cbfee2716e474ab1
+      internalID: -668237527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_16
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 376
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272e372427c9e7342b6bf4fbd44ab8e2
+      internalID: 1351047087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 376
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8eea3e97d33c3b4aac9387a7edbedd8
+      internalID: 1774199548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_18
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 376
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34808300213c21a4383dd191b9de545f
+      internalID: -71939759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_19
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 376
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a0357147daa784b80ec032dd5ac36d
+      internalID: -868786947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378191fcab055ba41a752c726b51c82d
+      internalID: -170628674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc33a3db6b6fa4645a5b536459164dcb
+      internalID: 583922923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_22
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18855acb15928ed49990a1e53cd876be
+      internalID: -1720174094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_23
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce8394848c70a74e80c952d7b4a8ff9
+      internalID: -1502701819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Queen Drop_24
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 250
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5, y: 0.332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61b356a1aa509347b8f5ce81110f799
+      internalID: 1797228711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Queen Drop_0: 553095967
+      Queen Drop_1: 277442456
+      Queen Drop_10: -47724502
+      Queen Drop_11: 1308104725
+      Queen Drop_12: 86881175
+      Queen Drop_13: 929014392
+      Queen Drop_14: 250313768
+      Queen Drop_15: -668237527
+      Queen Drop_16: 1351047087
+      Queen Drop_17: 1774199548
+      Queen Drop_18: -71939759
+      Queen Drop_19: -868786947
+      Queen Drop_2: 1648915121
+      Queen Drop_20: -170628674
+      Queen Drop_21: 583922923
+      Queen Drop_22: -1720174094
+      Queen Drop_23: -1502701819
+      Queen Drop_24: 1797228711
+      Queen Drop_3: 1516362621
+      Queen Drop_4: 1329605282
+      Queen Drop_5: -1449323207
+      Queen Drop_6: -938103534
+      Queen Drop_7: -1964747986
+      Queen Drop_8: 1731854251
+      Queen Drop_9: -2101966286
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
