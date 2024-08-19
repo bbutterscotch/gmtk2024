@@ -110,7 +110,9 @@ public class Bee : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Debug.Log("Enemy!");
+            hv.bees--;
             Destroy(gameObject);
+            
         } 
         // else wave hi to other bee
     }
