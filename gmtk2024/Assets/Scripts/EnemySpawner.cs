@@ -9,7 +9,8 @@ public class EnemySpawner : MonoBehaviour
     PathFinder pf;
     List<Vector3Int> tiles;
     MapController mc;
-    Tilemap tilemap;
+    Tilemap spriteMap;
+    Tilemap walkable;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject bear;
     [SerializeField] GameObject mite;
@@ -19,7 +20,8 @@ public class EnemySpawner : MonoBehaviour
     {
         pf = FindObjectOfType<PathFinder>();
         mc = FindObjectOfType<MapController>();
-        tilemap = mc.spriteMap;
+        spriteMap = mc.spriteMap;
+        walkable = mc.walkable;
     }
 
     public void spawnEnemies(int amount)
@@ -42,38 +44,39 @@ public class EnemySpawner : MonoBehaviour
 
     public void spawnEnemy()
     {
-        tiles = pf.tiles;
+        tiles = pf.getTiles();
         int index = Random.Range(0, tiles.Count);
-        Instantiate(enemy, tilemap.CellToWorld(tiles[index]) + new Vector3Int(0, 0, -1), Quaternion.identity);
+        Instantiate(enemy, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
     }
 
     public void spawnBear()
     {
-        tiles = pf.tiles;
+        tiles = pf.getTiles();
         int index = Random.Range(0, tiles.Count);
-        Instantiate(bear, tilemap.CellToWorld(tiles[index]) + new Vector3Int(0, 0, -1), Quaternion.identity);
+        Instantiate(bear, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
     }
 
     public void spawnMite()
     {
-        tiles = pf.tiles;
+        tiles = pf.getTiles();
         int index = Random.Range(0, tiles.Count);
-        Instantiate(mite, tilemap.CellToWorld(tiles[index]) + new Vector3Int(0, 0, -1), Quaternion.identity);
+        Instantiate(mite, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
     }
 
     public void spawnMites()
     {
-        tiles = pf.tiles;
+        tiles = pf.getTiles();
+        Debug.Log("TEST");
         int index = Random.Range(0, tiles.Count);
         for (int x = -1; x <= 1; x++)
         {
             for (int y = -1; y <= 1; y++)
             {
-                if (tilemap.HasTile(tiles[index] + new Vector3Int(x, y))) {
+                if (walkable.HasTile(tiles[index] + new Vector3Int(x, y))) {
                     int spawn = Random.Range(0, 2);
                     if (spawn == 1)
                     {
-                        Instantiate(mite, tilemap.CellToWorld(tiles[index] + new Vector3Int(x, y)) + new Vector3Int(0, 0, -1), Quaternion.identity);
+                        Instantiate(mite, spriteMap.CellToWorld(tiles[index] + new Vector3Int(x, y)), Quaternion.identity);
                     }
                 }
                 

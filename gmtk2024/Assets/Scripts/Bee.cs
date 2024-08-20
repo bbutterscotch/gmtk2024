@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEditor.FilePathAttribute;
 
 public class Bee : MonoBehaviour
 {
@@ -32,10 +33,36 @@ public class Bee : MonoBehaviour
         hv = FindObjectOfType<HiveResources>();
         cc = FindObjectOfType<CycleController>();
         startingCycle = cc.currentCycle;
-        path = pf.path;
-        tiles = pf.tiles;
+        path = pf.getPath();
+        tiles = pf.getTiles();
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(moveTile(delay, 0));
+    }
+
+    void playHitAnimation(Vector3Int location, string tileName)
+    {
+        AnimatedTile at = null;
+        if (tileName == "Pond")
+        {
+            at = mc.pondHitTile;
+        } else if (tileName == "Beekeeper")
+        {
+            at = mc.beekeeperHitTile;
+        } else if (tileName == "Meadow")
+        {
+            at = mc.meadowHitTile;
+        } else if (tileName == "Woodland")
+        {
+            at = mc.woodlandHitTile;
+        } else if (tileName == "Garden")
+        {
+            at = mc.gardenHitTile;
+        }
+        tilemap.SetTile(location, at);
+        tilemap.SetAnimationFrame(location, 0);
+        //yield return new WaitForSeconds(at.m_AnimatedSprites.Length / at.m_MinSpeed);
+        //tilemap.SetTile(location, t);
+
     }
 
     IEnumerator moveTile(float delayTime, int pathIndex)
@@ -44,21 +71,26 @@ public class Bee : MonoBehaviour
         StartCoroutine(moveOverTime(distance));
         //transform.position = tilemap.CellToWorld(tiles[path[pathIndex]]);
         TileBase currTile = tilemap.GetTile(tiles[path[pathIndex]]);
-        if (currTile.name.Equals("Tile_Beekeeper"))
+        if (currTile.name.Equals("Tile_Beekeeper_Drop") || currTile.name.Equals("Tile_Beekeeper_Hit"))
         {
             honey++;
-        } else if (currTile.name.Equals("Tile_Pond"))
+            playHitAnimation(tiles[path[pathIndex]], "Beekeeper");
+        } else if (currTile.name.Equals("Tile_Pond_Drop") || currTile.name.Equals("Tile_Pond_Hit"))
         {
             nectar++;
-        } else if (currTile.name.Equals("Tile_Meadow"))
+            playHitAnimation(tiles[path[pathIndex]], "Pond");
+        } else if (currTile.name.Equals("Tile_Meadow_Drop") || currTile.name.Equals("Tile_Meadow_Hit"))
         {
             pollen++;
-        } else if (currTile.name.Equals("Tile_Woodland"))
+            playHitAnimation(tiles[path[pathIndex]], "Meadow");
+        } else if (currTile.name.Equals("Tile_Woodland_Drop") || currTile.name.Equals("Tile_Woodland_Hit"))
         {
             wax++;
-        } else if (currTile.name.Equals("Tile_Garden"))
+            playHitAnimation(tiles[path[pathIndex]], "Woodland");
+        } else if (currTile.name.Equals("Tile_Garden_Drop") || currTile.name.Equals("Tile_Garden_Hit"))
         {
             royalJelly++;
+            playHitAnimation(tiles[path[pathIndex]], "Garden");
         }
         yield return new WaitForSeconds(delayTime);
         // edges refers to the index in tiles
@@ -87,8 +119,8 @@ public class Bee : MonoBehaviour
             }
 
             // reset path + update tiles
-            path = pf.path;
-            tiles = pf.tiles;
+            path = pf.getPath();
+            tiles = pf.getTiles();
             
             StartCoroutine(moveTile(delay, 0));
         } else

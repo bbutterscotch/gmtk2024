@@ -2877,7 +2877,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3704,11 +3704,16 @@ MonoBehaviour:
   unwalkable: {fileID: 1563563863}
   spriteMap: {fileID: 1072808479}
   entranceTile: {fileID: 11400000, guid: 96cd5e02f68607f4c99b0f607ac0616a, type: 2}
-  pondTile: {fileID: 11400000, guid: a206118211c176844b72a5e4c9b70f88, type: 2}
-  meadowTile: {fileID: 11400000, guid: 0477fcad168794a4fbf25e3041b5d135, type: 2}
-  beekeeperTile: {fileID: 11400000, guid: 8bf743220a8a8d14a8382d88134f13b6, type: 2}
-  woodlandTile: {fileID: 11400000, guid: c83c028d7644a9d4fa1ced3fd602e8d1, type: 2}
-  gardenTile: {fileID: 11400000, guid: 6ffef056748f1be42bdb69f04adb1032, type: 2}
+  pondDropTile: {fileID: 11400000, guid: ccbb7b1fb7b26284ea39fc89a9f72bdb, type: 2}
+  pondHitTile: {fileID: 11400000, guid: b8cd4bca3a8425142b50ab8b1adede99, type: 2}
+  meadowDropTile: {fileID: 11400000, guid: ac094444a7218e8458e43265f2dd0581, type: 2}
+  meadowHitTile: {fileID: 11400000, guid: 934c8af2e97ffa942baf45f3aea93ae2, type: 2}
+  beekeeperDropTile: {fileID: 11400000, guid: f32af49786416184c9d25382585f5fdc, type: 2}
+  beekeeperHitTile: {fileID: 11400000, guid: f861d127a7e000e459cae1f2312f1d31, type: 2}
+  woodlandDropTile: {fileID: 11400000, guid: ff32a01ccbe04b34a958ad9fb08ab611, type: 2}
+  woodlandHitTile: {fileID: 11400000, guid: 0875cd8f2631bd440b3f31578a18735a, type: 2}
+  gardenDropTile: {fileID: 11400000, guid: b2af3da85736b844792663a55ee82002, type: 2}
+  gardenHitTile: {fileID: 11400000, guid: 31d7c3657a4822049bc32017e496d481, type: 2}
   nurseryTile: {fileID: 11400000, guid: c83c028d7644a9d4fa1ced3fd602e8d1, type: 2}
   queenbeedropTile: {fileID: 11400000, guid: 2cbbfa38b56981e42954d659b767a218, type: 2}
   queenbeeTile: {fileID: 11400000, guid: 5da7093e64af52244a766ba9b57e592f, type: 2}
@@ -3825,7 +3830,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30.000002
+      m_AnimationSpeed: 30
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: 0, y: -1, z: 0}
@@ -3885,7 +3890,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: -1, y: 1, z: 0}
@@ -3900,7 +3905,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 30.000002
       m_AnimationTimeOffset: 0
       m_Flags: 1
   m_TileAssetArray:
@@ -4529,8 +4534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 10
-  tiles: []
-  path: 
 --- !u!4 &1874512414
 Transform:
   m_ObjectHideFlags: 0

@@ -9,16 +9,21 @@ public class MapController : MonoBehaviour
     [SerializeField] public Tilemap walkable;
     [SerializeField] public Tilemap unwalkable;
     [SerializeField] public Tilemap spriteMap;
-    [SerializeField] AnimatedTile entranceTile;
-    [SerializeField] Tile pondTile;
-    [SerializeField] Tile meadowTile;
-    [SerializeField] Tile beekeeperTile;
-    [SerializeField] Tile woodlandTile;
-    [SerializeField] Tile gardenTile;
-    [SerializeField] Tile nurseryTile;
-    [SerializeField] AnimatedTile queenbeedropTile;
-    [SerializeField] Tile queenbeeTile;
-    [SerializeField] AnimatedTile queenbeeIdleTile;
+    [SerializeField] public AnimatedTile entranceTile;
+    [SerializeField] public AnimatedTile pondDropTile;
+    [SerializeField] public AnimatedTile pondHitTile;
+    [SerializeField] public AnimatedTile meadowDropTile;
+    [SerializeField] public AnimatedTile meadowHitTile;
+    [SerializeField] public AnimatedTile beekeeperDropTile;
+    [SerializeField] public AnimatedTile beekeeperHitTile;
+    [SerializeField] public AnimatedTile woodlandDropTile;
+    [SerializeField] public AnimatedTile woodlandHitTile;
+    [SerializeField] public AnimatedTile gardenDropTile;
+    [SerializeField] public AnimatedTile gardenHitTile;
+    [SerializeField] public Tile nurseryTile;
+    [SerializeField] public AnimatedTile queenbeedropTile;
+    [SerializeField] public Tile queenbeeTile;
+    [SerializeField] public AnimatedTile queenbeeIdleTile;
     HiveResources hv;
 
     public Vector3Int center = new Vector3Int(0, 0, 0);
@@ -45,29 +50,30 @@ public class MapController : MonoBehaviour
             int posIndex = Random.Range(0, positions.Count);
             if (i < 2)
             {
-                walkable.SetTile(positions[posIndex], gardenTile);
+                walkable.SetTile(positions[posIndex], gardenDropTile);
                 hv.gardenTiles++;
             } else if (i < 4)
             {
-                walkable.SetTile(positions[posIndex], woodlandTile);
+                walkable.SetTile(positions[posIndex], woodlandDropTile);
                 hv.woodlandTiles++;
             } else if (i < 6)
             {
-                walkable.SetTile(positions[posIndex], meadowTile);
+                walkable.SetTile(positions[posIndex], meadowDropTile);
                 hv.meadowTiles++;
             } else if (i < 9)
             {
-                walkable.SetTile(positions[posIndex], pondTile);
+                walkable.SetTile(positions[posIndex], pondDropTile);
                 hv.pondTiles++;
             } else
             {
-                walkable.SetTile(positions[posIndex], beekeeperTile);
+                walkable.SetTile(positions[posIndex], beekeeperDropTile);
                 hv.beekeeperTiles++;
             }
             positions.RemoveAt(posIndex);
         }
         StartCoroutine(UpdateQueenTile());
     }
+
 
     IEnumerator UpdateQueenTile()
     {
