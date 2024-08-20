@@ -228,6 +228,7 @@ public class CellClick : MonoBehaviour
                         circleMask.enabled = false;
                     }
                     tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), selectedTile);
+                    AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
 
                     if (selectedTile.name == woodlandTileName) {
                         replaceMatches(tilemapPos, forestTile);
@@ -271,10 +272,6 @@ public class CellClick : MonoBehaviour
                         }
                         //print("gardens: " + gardenTiles + " | meadows: " + meadowTiles + " | ponds: " + pondTiles);
                         
-                    }
-                    else
-                    {
-                        AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
                     }
                 }
             }

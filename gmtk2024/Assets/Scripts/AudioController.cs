@@ -39,6 +39,15 @@ public class AudioController : MonoBehaviour
         musicEventInstance.start();
     }
 
+    private void StopMusic ()
+    {
+        if (musicEventInstance.isValid())
+        {
+            musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            musicEventInstance.release(); // Release the event instance to free resources
+        }
+    }
+
     public void SetParameter(EventReference sound, string parameterName, float parameterValue, Vector3 worldPosition)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(sound);

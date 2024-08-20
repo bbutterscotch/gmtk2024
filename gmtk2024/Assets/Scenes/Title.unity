@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 1023356725}
   - component: {fileID: 1023356724}
   m_Layer: 0
-  m_Name: AudioController
+  m_Name: Audio Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,11 +941,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music:
     Guid:
-      Data1: -94178437
-      Data2: 1121069517
-      Data3: 1870735784
-      Data4: -2073880398
-    Path: event:/Music
+      Data1: 993204809
+      Data2: 1232177341
+      Data3: -561953892
+      Data4: 1364737187
+    Path: event:/Music 2
 --- !u!4 &1023356725
 Transform:
   m_ObjectHideFlags: 0
@@ -1674,7 +1674,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 155666565}
+  - {fileID: 1023356725}
   - {fileID: 631309983}
   - {fileID: 1181785641}
-  - {fileID: 1023356725}
   - {fileID: 1122844147}
