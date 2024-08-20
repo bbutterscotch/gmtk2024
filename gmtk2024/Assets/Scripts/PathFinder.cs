@@ -10,8 +10,8 @@ public class PathFinder : MonoBehaviour
     private MapController mc;
     private Tilemap tilemap;
     [SerializeField] private float delay = 10f;
-    public List<Vector3Int> tiles;
-    public List<int> path;
+    private List<Vector3Int> tiles;
+    private List<int> path;
     private List<List<int>> edges;
 
     // Start is called before the first frame update
@@ -28,6 +28,8 @@ public class PathFinder : MonoBehaviour
 
     IEnumerator findNewPath(float delay, int start)
     {
+        getAllTiles(-10, 10, -10, 10);
+        start = tiles.FindIndex(a => (a.x == mc.startTile.x && a.y == mc.startTile.y));
         path = new List<int>();
         defineGraph(start);
         path.Add(start);
@@ -52,6 +54,7 @@ public class PathFinder : MonoBehaviour
         }
         Debug.Log(toPrint);
         yield return new WaitForSeconds(delay);
+        
         StartCoroutine(findNewPath(delay, start));
     }
 
@@ -137,5 +140,15 @@ public class PathFinder : MonoBehaviour
             }
         }
         return temp;
+    }
+
+    public List<int> getPath()
+    {
+        return path;
+    }
+
+    public List<Vector3Int> getTiles()
+    {
+        return tiles;
     }
 }

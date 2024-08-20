@@ -32,8 +32,8 @@ public class Bee : MonoBehaviour
         hv = FindObjectOfType<HiveResources>();
         cc = FindObjectOfType<CycleController>();
         startingCycle = cc.currentCycle;
-        path = pf.path;
-        tiles = pf.tiles;
+        path = pf.getPath();
+        tiles = pf.getTiles();
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(moveTile(delay, 0));
     }
@@ -87,8 +87,8 @@ public class Bee : MonoBehaviour
             }
 
             // reset path + update tiles
-            path = pf.path;
-            tiles = pf.tiles;
+            path = pf.getPath();
+            tiles = pf.getTiles();
             
             StartCoroutine(moveTile(delay, 0));
         } else
