@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using FMODUnity;
 
 public class BearController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class BearController : MonoBehaviour
     [SerializeField] private float timeAtCenter = 2f;
     HiveResources hv;
     [SerializeField] private int stolenHoney = 10;
-
+    [SerializeField] private EventReference beeDeathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class BearController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         beesKilled++;
+        AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
         if (beesKilled == beesToKill)
         {
             Destroy(gameObject);

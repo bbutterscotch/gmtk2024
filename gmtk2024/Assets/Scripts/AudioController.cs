@@ -1,18 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class AudioController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static AudioController instance { get; private set; }
+
+    [Header("Volume")]
+    public float masterVolume = 1;
+    [Range(0, 1)]
+    private Bus masterBus;
+
+    [SerializeField] private EventReference music;
+    private EventInstance musicEventInstance;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Debug.LogError("Found more than one Audio Manager in the scene.");
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        masterBus = RuntimeManager.GetBus("bus:/");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        InitializeMusic(music);
+    }
+    
+    private void Update()
+    {
+        masterBus.setVolume(masterVolume);
+    }
+
+    private void InitializeMusic (EventReference musicEventReference)
+    {
+        musicEventInstance = RuntimeManager.CreateInstance(musicEventReference);
+        musicEventInstance.start();
+    }
+
+    public void SetParameter(EventReference sound, string parameterName, float parameterValue, Vector3 worldPosition)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(sound);
+        eventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(worldPosition));
+        eventInstance.setParameterByName(parameterName, parameterValue);
+        eventInstance.start();
+        eventInstance.release(); // Release the event instance after playing it
+    }
+
+    public void PlayOneShot(EventReference sound, Vector3 worldPosition)
+    {
+        RuntimeManager.PlayOneShot(sound, worldPosition);
     }
 }
