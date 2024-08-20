@@ -904,6 +904,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 53ec290fb8c1d814dad73da7f0b2bb6f, type: 3}
   - {fileID: 21300000, guid: 40b8ba60c5277a34fa47334cfecf61f3, type: 3}
   - {fileID: 21300000, guid: 21c74acf51dce11478e988fc5ed963ea, type: 3}
+  beeSpawnSound:
+    Guid:
+      Data1: 518076097
+      Data2: 1242504950
+      Data3: 2000316566
+      Data4: 233577616
+    Path: event:/Bee Spawn
 --- !u!4 &261437395
 Transform:
   m_ObjectHideFlags: 0
@@ -934,6 +941,13 @@ MonoBehaviour:
   enemy: {fileID: 371898051761453884, guid: 4aa46ac16120b034e8b401b61e262a59, type: 3}
   bear: {fileID: 5050793035687651875, guid: 48c42ec5c38b6c248b9756b476efe320, type: 3}
   mite: {fileID: 5050793035687651875, guid: 6d22c6b7aa5a9904b9785a41f85c371d, type: 3}
+  enemySpawnSound:
+    Guid:
+      Data1: 10639012
+      Data2: 1222045156
+      Data3: 248553348
+      Data4: 1930583719
+    Path: event:/Enemy Spawn
 --- !u!1 &280497513
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +983,20 @@ MonoBehaviour:
   timeSteps: 40
   difficulty: 1
   beesPerRound: 4
+  cycleBellSound:
+    Guid:
+      Data1: 731681489
+      Data2: 1177954069
+      Data3: 1160882562
+      Data4: 540630932
+    Path: event:/Cycle Bell
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
 --- !u!4 &280497515
 Transform:
   m_ObjectHideFlags: 0
@@ -37262,6 +37290,20 @@ MonoBehaviour:
   queenbeedropTile: {fileID: 11400000, guid: 2cbbfa38b56981e42954d659b767a218, type: 2}
   queenbeeTile: {fileID: 11400000, guid: 5da7093e64af52244a766ba9b57e592f, type: 2}
   queenbeeIdleTile: {fileID: 11400000, guid: 35b604ac51b6e9c408230eff8bdf30bd, type: 2}
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
+  queenStartSound:
+    Guid:
+      Data1: 1863808012
+      Data2: 1176874300
+      Data3: 333844615
+      Data4: 1417393681
+    Path: event:/Tile Queen Bee
   center: {x: 0, y: 0, z: 0}
   startTile: {x: 0, y: 2, z: 0}
 --- !u!1 &1557918954
@@ -37638,7 +37680,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: 0, y: -1, z: 0}
@@ -37653,7 +37695,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 15
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: -1, y: 0, z: 0}
@@ -37668,7 +37710,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: 0, y: 0, z: 0}
@@ -37683,7 +37725,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 15
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: 1, y: 0, z: 0}
@@ -37698,7 +37740,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 15
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: -1, y: 1, z: 0}
@@ -37713,7 +37755,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 30
+      m_AnimationSpeed: 15
       m_AnimationTimeOffset: 0
       m_Flags: 1
   m_TileAssetArray:
@@ -38892,6 +38934,7 @@ MonoBehaviour:
   forestTile: {fileID: 11400000, guid: f32af49786416184c9d25382585f5fdc, type: 2}
   apiaryTile: {fileID: 11400000, guid: f32af49786416184c9d25382585f5fdc, type: 2}
   parkTile: {fileID: 11400000, guid: f32af49786416184c9d25382585f5fdc, type: 2}
+  isPlacing: 0
 --- !u!4 &2041376578
 Transform:
   m_ObjectHideFlags: 0
@@ -38902,6 +38945,58 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 485.1079, y: 351.09735, z: 3.0901988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2057232040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057232042}
+  - component: {fileID: 2057232041}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2057232041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057232040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d748c46ae9062c4c8eca87b8db6e8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
+--- !u!4 &2057232042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057232040}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1029.2765, y: 497.11438, z: -7.0281663}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39190,3 +39285,4 @@ SceneRoots:
   - {fileID: 2041376578}
   - {fileID: 1176636835}
   - {fileID: 1608312018}
+  - {fileID: 2057232042}

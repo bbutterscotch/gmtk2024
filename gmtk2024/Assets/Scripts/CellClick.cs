@@ -40,7 +40,7 @@ public class CellClick : MonoBehaviour
     Vector3Int tilemapPos;
     Vector3Int prevTilePos;
 
-    private bool isPlacing = false;
+    public bool isPlacing = false;
 
     // Names
     private string pondTileName;
