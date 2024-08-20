@@ -8,11 +8,6 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController instance { get; private set; }
 
-    [Header("Volume")]
-    public float masterVolume = 1;
-    [Range(0, 1)]
-    private Bus masterBus;
-
     [SerializeField] private EventReference music;
     private EventInstance musicEventInstance;
 
@@ -26,8 +21,6 @@ public class AudioController : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-        masterBus = RuntimeManager.GetBus("bus:/");
     }
 
     private void Start()
@@ -37,7 +30,7 @@ public class AudioController : MonoBehaviour
     
     private void Update()
     {
-        masterBus.setVolume(masterVolume);
+
     }
 
     private void InitializeMusic (EventReference musicEventReference)

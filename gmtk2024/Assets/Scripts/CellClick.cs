@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using FMODUnity;
 
 public class CellClick : MonoBehaviour
 {
@@ -52,6 +53,10 @@ public class CellClick : MonoBehaviour
     private string forestTileName;
     private string apiaryTileName;
     private string parkTileName;
+
+    [SerializeField] private EventReference tileBasicSound;
+    [SerializeField] private EventReference tileAdvancedSound;
+    [SerializeField] private EventReference music;
 
     // Tile Neighbors
     private Vector3Int[] evenNeighbors = {
@@ -226,8 +231,12 @@ public class CellClick : MonoBehaviour
 
                     if (selectedTile.name == woodlandTileName) {
                         replaceMatches(tilemapPos, forestTile);
+                        //AudioController.instance.SetParameter(music, "Forest", 1, this.transform.position);
+                        AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == beekeeperTileName) {
                         replaceMatches(tilemapPos, apiaryTile);
+                        //AudioController.instance.SetParameter(music, "Apiary", 1, this.transform.position);
+                        AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == gardenTileName || selectedTile.name == meadowTileName || selectedTile.name == pondTileName) {
                         // Park: garden + meadow + pond
                         matchingNeighbors = new List<Vector3Int>();
@@ -257,8 +266,15 @@ public class CellClick : MonoBehaviour
                                 tilemap.SetTile(new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0), parkTile);
                             }
                             tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), parkTile);
+                            //AudioController.instance.SetParameter(music, "Park", 1, this.transform.position);
+                            AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                         }
                         //print("gardens: " + gardenTiles + " | meadows: " + meadowTiles + " | ponds: " + pondTiles);
+                        
+                    }
+                    else
+                    {
+                        AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
                     }
                 }
             }
