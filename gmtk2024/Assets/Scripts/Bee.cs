@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEditor.FilePathAttribute;
+using FMODUnity;
 
 public class Bee : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class Bee : MonoBehaviour
     private int royalJelly = 0;
     private int startingCycle;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private EventReference beeDeathSound;
+    [SerializeField] private EventReference cycleDepositSound;
 
     // Start is called before the first frame update
     void Start()
@@ -110,12 +113,15 @@ public class Bee : MonoBehaviour
             wax = 0;
             hv.royalJelly += royalJelly;
             royalJelly = 0;
+            AudioController.instance.PlayOneShot(cycleDepositSound, this.transform.position);
 
             // Bee death
             if (startingCycle + 10 <= cc.currentCycle)
             {
                 hv.bees--;
                 Destroy(gameObject);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
+                AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
             }
 
             // reset path + update tiles
@@ -153,7 +159,10 @@ public class Bee : MonoBehaviour
             Debug.Log("Enemy!");
             hv.bees--;
             Destroy(gameObject);
-            
+            //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
+            //AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+            //AudioController.instance.PlayOneShot(denyResourceSound, this.transform.position);
+
         } 
         // else wave hi to other bee
     }

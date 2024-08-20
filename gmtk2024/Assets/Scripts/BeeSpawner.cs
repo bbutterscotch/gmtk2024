@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using FMODUnity;
 
 public class BeeSpawner : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BeeSpawner : MonoBehaviour
     private Tilemap tilemap;
     private HiveResources hv;
     [SerializeField] List<Sprite> beeTypes;
+
+    [SerializeField] private EventReference beeSpawnSound;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +30,7 @@ public class BeeSpawner : MonoBehaviour
         GameObject newBee = Instantiate(beePrefab, tilemap.CellToWorld(mc.startTile), Quaternion.identity);
         SpriteRenderer newSprite = newBee.GetComponent<SpriteRenderer>();
         newSprite.sprite = beeTypes[Random.Range(0, beeTypes.Count)];
+        AudioController.instance.PlayOneShot(beeSpawnSound, this.transform.position);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
     }
 }

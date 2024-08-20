@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using FMODUnity;
 
 public class MapController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class MapController : MonoBehaviour
     [SerializeField] public AnimatedTile queenbeeIdleTile;
     HiveResources hv;
 
+    [SerializeField] private EventReference music;
+    [SerializeField] private EventReference queenStartSound;
+
     public Vector3Int center = new Vector3Int(0, 0, 0);
     public Vector3Int startTile = new Vector3Int(0, 2, 0);
 
@@ -37,6 +41,7 @@ public class MapController : MonoBehaviour
 
         // 12 tiles to start + 1 nursery tile
         unwalkable.SetTile(center, queenbeedropTile);
+        AudioController.instance.PlayOneShot(queenStartSound, this.transform.position);
         unwalkable.SetTile(center + Vector3Int.up, nurseryTile);
         hv.nurseryTiles++;
         walkable.SetTile(startTile, entranceTile);
@@ -51,22 +56,27 @@ public class MapController : MonoBehaviour
             if (i < 2)
             {
                 walkable.SetTile(positions[posIndex], gardenDropTile);
+                AudioController.instance.SetParameter(music, "Garden", 1, this.transform.position);
                 hv.gardenTiles++;
             } else if (i < 4)
             {
                 walkable.SetTile(positions[posIndex], woodlandDropTile);
+                AudioController.instance.SetParameter(music, "Woodland", 1, this.transform.position);
                 hv.woodlandTiles++;
             } else if (i < 6)
             {
                 walkable.SetTile(positions[posIndex], meadowDropTile);
+                AudioController.instance.SetParameter(music, "Meadow", 1, this.transform.position);
                 hv.meadowTiles++;
             } else if (i < 9)
             {
                 walkable.SetTile(positions[posIndex], pondDropTile);
+                AudioController.instance.SetParameter(music, "Pond", 1, this.transform.position);
                 hv.pondTiles++;
             } else
             {
                 walkable.SetTile(positions[posIndex], beekeeperDropTile);
+                AudioController.instance.SetParameter(music, "Beekeeper", 1, this.transform.position);
                 hv.beekeeperTiles++;
             }
             positions.RemoveAt(posIndex);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using FMODUnity;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject bear;
     [SerializeField] GameObject mite;
+    [SerializeField] private EventReference enemySpawnSound;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.getTiles();
         int index = Random.Range(0, tiles.Count);
         Instantiate(enemy, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnBear()
@@ -54,6 +57,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.getTiles();
         int index = Random.Range(0, tiles.Count);
         Instantiate(bear, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnMite()
@@ -61,6 +65,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.getTiles();
         int index = Random.Range(0, tiles.Count);
         Instantiate(mite, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnMites()
@@ -82,6 +87,7 @@ public class EnemySpawner : MonoBehaviour
                 
             }
         }
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     // Update is called once per frame
