@@ -48,6 +48,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.5
+  beeDeathSound:
+    Guid:
+      Data1: -1478753232
+      Data2: 1288200908
+      Data3: 1626064297
+      Data4: 1545551254
+    Path: event:/Bee Death
+  cycleDepositSound:
+    Guid:
+      Data1: 584551521
+      Data2: 1097762054
+      Data3: -947126116
+      Data4: 1602256186
+    Path: event:/Cycle Deposit
 --- !u!61 &2286493296233877179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,6 +183,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

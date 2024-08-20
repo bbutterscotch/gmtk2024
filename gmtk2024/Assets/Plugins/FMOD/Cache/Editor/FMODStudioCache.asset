@@ -102,6 +102,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7889673328818535863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Bee C/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-7505902511569498431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,30 +153,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-7090674670566205936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Cycle Bell/Cycle
-  m_EditorClassIdentifier: 
-  Name: Cycle
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 288033980
-    data2: 3492274214
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-6454572285371639329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,11 +176,34 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: -7090674670566205936}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6149735518846470047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Bee E/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-4791882832360692360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +254,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 8269011891579617551}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -274,7 +298,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: 
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -334,6 +358,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2405788805248906520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-2254772898284025726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,7 +424,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: parameter:/Beemony
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -454,7 +502,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: 
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -483,6 +531,30 @@ MonoBehaviour:
   ID:
     data1: 1328266713
     data2: 4060453489
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-157748220248277498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Bee E 2/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
   Type: 1
   IsGlobal: 1
   Labels: []
@@ -530,11 +602,13 @@ MonoBehaviour:
   EditorParameters:
   - {fileID: 5626016314074729087}
   - {fileID: -1713904365317677801}
+  - {fileID: 1577797038862948172}
+  - {fileID: 820213297471321394}
   MasterBanks:
   - {fileID: 5712616262778562457}
   StringsBanks:
   - {fileID: 6093274633807920767}
-  cacheTime: 638597168277597600
+  cacheTime: 638597287547028044
   cacheVersion: 131619
 --- !u!114 &5895274652030631
 MonoBehaviour:
@@ -636,6 +710,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 6751937785922726319}
+  - {fileID: -7889673328818535863}
   MinDistance: 1
   MaxDistance: 20
   Length: 7058
@@ -691,9 +766,34 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 6341512288168565895}
+  - {fileID: -157748220248277498}
   MinDistance: 1
   MaxDistance: 20
   Length: 5647
+--- !u!114 &820213297471321394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cycle
+  m_EditorClassIdentifier: 
+  Name: Cycle
+  StudioPath: parameter:/Cycle
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 288033980
+    data2: 3492274214
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1408976383205349827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,6 +821,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1577797038862948172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: parameter:/Beemony Mute
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1592658414609328459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,7 +939,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: 
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -876,6 +1000,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3818754995042819933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music Bee G/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5076214057935896159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,7 +1063,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: 
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -960,6 +1108,7 @@ MonoBehaviour:
   - {fileID: -3569812578223451330}
   - {fileID: 5076214057935896159}
   - {fileID: -8477839555791853586}
+  - {fileID: -2405788805248906520}
   MinDistance: 1
   MaxDistance: 20
   Length: 33882
@@ -1008,7 +1157,7 @@ MonoBehaviour:
     data1: 288033980
     data2: 3492274214
   Type: 1
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &5700563676985518752
@@ -1036,6 +1185,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 5176183327354919553}
+  - {fileID: -6149735518846470047}
   MinDistance: 1
   MaxDistance: 20
   Length: 5647
@@ -1054,7 +1204,7 @@ MonoBehaviour:
   Path: FMODAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638597168277528040
+  lastModified: 638597287546782831
   FileSizes: []
   Exists: 1
 --- !u!114 &6093274633807920767
@@ -1072,10 +1222,10 @@ MonoBehaviour:
   Path: FMODAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638597168277597600
+  lastModified: 638597287547028044
   FileSizes:
   - Name: 
-    Value: 2300
+    Value: 2346
   Exists: 1
 --- !u!114 &6237456956269507234
 MonoBehaviour:
@@ -1119,7 +1269,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: 
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -1143,7 +1293,7 @@ MonoBehaviour:
   Name: Beemony
   StudioPath: 
   Min: 0
-  Max: 200
+  Max: 40
   Default: 0
   ID:
     data1: 2284705100
@@ -1255,6 +1405,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8269011891579617551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bee Spawn/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &9147649491740413852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,6 +1454,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 2096044750552099156}
+  - {fileID: 3818754995042819933}
   MinDistance: 1
   MaxDistance: 20
   Length: 5649

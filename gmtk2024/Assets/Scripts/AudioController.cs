@@ -8,6 +8,14 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController instance { get; private set; }
 
+    [Header("Volume")]
+    public float masterVolume = 1;
+    [Range(0, 1)]
+    private Bus masterBus;
+
+    [SerializeField] private EventReference music;
+    private EventInstance musicEventInstance;
+
     private void Awake()
     {
         if (instance != null)
@@ -18,6 +26,24 @@ public class AudioController : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        masterBus = RuntimeManager.GetBus("bus:/");
+    }
+
+    private void Start()
+    {
+        InitializeMusic(music);
+    }
+    
+    private void Update()
+    {
+        masterBus.setVolume(masterVolume);
+    }
+
+    private void InitializeMusic (EventReference musicEventReference)
+    {
+        musicEventInstance = RuntimeManager.CreateInstance(musicEventReference);
+        musicEventInstance.start();
     }
 
     public void SetParameter(EventReference sound, string parameterName, float parameterValue, Vector3 worldPosition)

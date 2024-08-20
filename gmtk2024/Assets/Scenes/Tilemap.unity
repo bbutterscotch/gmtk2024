@@ -772,6 +772,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 53ec290fb8c1d814dad73da7f0b2bb6f, type: 3}
   - {fileID: 21300000, guid: 40b8ba60c5277a34fa47334cfecf61f3, type: 3}
   - {fileID: 21300000, guid: 21c74acf51dce11478e988fc5ed963ea, type: 3}
+  beeSpawnSound:
+    Guid:
+      Data1: 518076097
+      Data2: 1242504950
+      Data3: 2000316566
+      Data4: 233577616
+    Path: event:/Bee Spawn
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
 --- !u!4 &261437395
 Transform:
   m_ObjectHideFlags: 0
@@ -844,6 +858,20 @@ MonoBehaviour:
   timeSteps: 40
   difficulty: 1
   beesPerRound: 4
+  cycleBellSound:
+    Guid:
+      Data1: 731681489
+      Data2: 1177954069
+      Data3: 1160882562
+      Data4: 540630932
+    Path: event:/Cycle Bell
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
 --- !u!4 &280497515
 Transform:
   m_ObjectHideFlags: 0
@@ -2776,6 +2804,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d748c46ae9062c4c8eca87b8db6e8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
 --- !u!4 &1061329743
 Transform:
   m_ObjectHideFlags: 0
@@ -3774,6 +3809,20 @@ MonoBehaviour:
   queenbeedropTile: {fileID: 11400000, guid: 2cbbfa38b56981e42954d659b767a218, type: 2}
   queenbeeTile: {fileID: 11400000, guid: 5da7093e64af52244a766ba9b57e592f, type: 2}
   queenbeeIdleTile: {fileID: 11400000, guid: 35b604ac51b6e9c408230eff8bdf30bd, type: 2}
+  music:
+    Guid:
+      Data1: -94178437
+      Data2: 1121069517
+      Data3: 1870735784
+      Data4: -2073880398
+    Path: event:/Music
+  queenStartSound:
+    Guid:
+      Data1: 1863808012
+      Data2: 1176874300
+      Data3: 333844615
+      Data4: 1417393681
+    Path: event:/Tile Queen Bee
   center: {x: 0, y: 0, z: 0}
   startTile: {x: 0, y: 2, z: 0}
 --- !u!1 &1563563862

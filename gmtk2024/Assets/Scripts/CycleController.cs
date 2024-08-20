@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using FMODUnity;
 
 public class CycleController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CycleController : MonoBehaviour
     EnemySpawner enemySpawner;
     BeeSpawner beeSpawner;
     HiveResources hv;
+    [SerializeField] private EventReference cycleBellSound;
+    [SerializeField] private EventReference music;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,7 @@ public class CycleController : MonoBehaviour
         currentTime = 0f;
         StartCoroutine(spawnBees(5));
         StartCoroutine(updateTime());
+        AudioController.instance.PlayOneShot(cycleBellSound, this.transform.position);
     }
 
     IEnumerator spawnBees(int multiplier)
@@ -51,6 +55,17 @@ public class CycleController : MonoBehaviour
         {
             currentTime = 0f;
             currentCycle += 1;
+            AudioController.instance.PlayOneShot(cycleBellSound, this.transform.position);
+            if (currentCycle % 2 != 0)
+            {
+                //AudioController.instance.SetParameter(music, "Cycle", 0, this.transform.position);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Cycle", 0);
+            }
+            else
+            {
+                //AudioController.instance.SetParameter(music, "Cycle", 1, this.transform.position);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Cycle", 1);
+            }
             int enemiesToSpawn = (currentCycle / 5 + 1) * difficulty;
             enemySpawner.spawnEnemies(enemiesToSpawn);
             StartCoroutine(spawnBees(1));

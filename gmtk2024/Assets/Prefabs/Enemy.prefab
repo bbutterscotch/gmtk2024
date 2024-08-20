@@ -134,3 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beesToKill: 2
+  beeDeathSound:
+    Guid:
+      Data1: -1478753232
+      Data2: 1288200908
+      Data3: 1626064297
+      Data4: 1545551254
+    Path: event:/Bee Death

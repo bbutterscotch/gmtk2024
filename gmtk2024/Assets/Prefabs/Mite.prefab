@@ -134,3 +134,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beesToKill: 10
+  denyResourceSound:
+    Guid:
+      Data1: 217264432
+      Data2: 1198004690
+      Data3: 1345848971
+      Data4: -1529793205
+    Path: event:/Enemy Deny Source
