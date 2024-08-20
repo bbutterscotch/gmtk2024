@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Tile_Garden_Hit
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 973355310, guid: 39fdc7724b3cd05448aa969a7775c928, type: 3}
+  - {fileID: 1298934048, guid: 39fdc7724b3cd05448aa969a7775c928, type: 3}
+  - {fileID: 235644289, guid: 39fdc7724b3cd05448aa969a7775c928, type: 3}
+  - {fileID: 1927066550, guid: 39fdc7724b3cd05448aa969a7775c928, type: 3}
+  - {fileID: 1032303358, guid: 39fdc7724b3cd05448aa969a7775c928, type: 3}
+  - {fileID: 1930128814, guid: 39fdc7724b3cd05448aa969a7775c928, type: 3}
+  m_MinSpeed: 30
+  m_MaxSpeed: 30
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 2
+  m_TileAnimationFlags: 1

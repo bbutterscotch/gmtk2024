@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Tile_Woodland_Hit
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1645596506, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: -638489797, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: -33010508, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: -718243750, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: 408117305, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: 1539099153, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: 555426842, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: 901505090, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  - {fileID: -1386873627, guid: ce73dcda020144b44b515cb61438cbe3, type: 3}
+  m_MinSpeed: 30
+  m_MaxSpeed: 30
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 2
+  m_TileAnimationFlags: 1
