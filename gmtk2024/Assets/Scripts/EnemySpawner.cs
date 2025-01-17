@@ -7,7 +7,7 @@ using FMODUnity;
 public class EnemySpawner : MonoBehaviour
 {
 
-    PathFinder pf;
+    PathFinder3 pf;
     List<Vector3Int> tiles;
     MapController mc;
     Tilemap spriteMap;
@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pf = FindObjectOfType<PathFinder>();
+        pf = FindObjectOfType<PathFinder3>();
         mc = FindObjectOfType<MapController>();
         spriteMap = mc.spriteMap;
         walkable = mc.walkable;
@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void spawnEnemy()
     {
-        tiles = pf.getTiles();
+        tiles = pf.path;
         int index = Random.Range(0, tiles.Count);
         Instantiate(enemy, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
@@ -54,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void spawnBear()
     {
-        tiles = pf.getTiles();
+        tiles = pf.path;
         int index = Random.Range(0, tiles.Count);
         Instantiate(bear, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void spawnMite()
     {
-        tiles = pf.getTiles();
+        tiles = pf.path;
         int index = Random.Range(0, tiles.Count);
         Instantiate(mite, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void spawnMites()
     {
-        tiles = pf.getTiles();
+        tiles = pf.path;
         int index = Random.Range(0, tiles.Count);
         for (int x = -1; x <= 1; x++)
         {

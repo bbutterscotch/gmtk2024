@@ -46,7 +46,7 @@ public class CycleController : MonoBehaviour
     IEnumerator updateTime()
     {
         currentTime += cycleLength / timeSteps;
-        if (currentTime % Math.Ceiling(cycleLength/beesPerRound) == 0 && Math.Round(currentTime) != 0)
+        if (currentTime % Math.Ceiling(cycleLength/beesPerRound) <= 0.2 && Math.Round(currentTime) != 0)
         {
             Debug.Log("Spawn bee");
             StartCoroutine(spawnBees(1));
@@ -67,7 +67,7 @@ public class CycleController : MonoBehaviour
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Cycle", 1);
             }
             int enemiesToSpawn = (currentCycle / 5 + 1) * difficulty;
-            //enemySpawner.spawnEnemies(enemiesToSpawn);
+            enemySpawner.spawnEnemies(enemiesToSpawn);
             StartCoroutine(spawnBees(1));
         }
         yield return new WaitForSeconds(cycleLength / timeSteps);

@@ -29,19 +29,19 @@ public class PathFinder3 : MonoBehaviour
     {
         var tuple = getTiles(tm);
         tiles = tuple.Item2;
-        Debug.Log("Tiles: " + tiles.Count.ToString());
+        //Debug.Log("Tiles: " + tiles.Count.ToString());
         tilesIndex = tuple.Item1;
-        Debug.Log("Tiles Index: " + tilesIndex.Count.ToString());
+        //Debug.Log("Tiles Index: " + tilesIndex.Count.ToString());
         Dictionary<int, List<int>> graph = generateGraph(tm, tilesIndex, tiles);
-        Debug.Log("Graph: " + graph.Count.ToString());
-        Debug.Log(GraphToString(graph, tilesIndex));
+        //Debug.Log("Graph: " + graph.Count.ToString());
+        //Debug.Log(GraphToString(graph, tilesIndex));
         var cameFrom = sp.Search(graph);
         List<Vector3Int> path = new List<Vector3Int>();
         if (cameFrom.Item2 != null)
         {
             List<int> pathIndex = sp.reconstructPath(cameFrom.Item1, cameFrom.Item2);
             path = pathIndexToLocation(pathIndex, tilesIndex);
-            Debug.Log(printPath(path));
+            //Debug.Log(printPath(path));
             path = shiftPath(path, start, goal);
             path.Add(start);
             Debug.Log(printPath(path));

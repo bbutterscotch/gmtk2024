@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,8 +80,21 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -95,8 +108,361 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Meadow-Upgrade_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c56b3e1a336384d81447e014cbc265
+      internalID: 952073142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1050
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb09b370a5f17e64a8b8d70852a66d61
+      internalID: 1950564810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1050
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee83ecc86b295bc4ca75ff78d2e30622
+      internalID: 1229367089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1050
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e61628c30aff614786beca6b1c366f7
+      internalID: 355281224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1050
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de205e50ccf46a49b94238912cbd018
+      internalID: -1680848597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b61c92f08db1442985e9af3b537d07
+      internalID: 2088064700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a035a32ea3e36e4b9bebbdf85aabc12
+      internalID: 957330507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0cfe301a42ded4aad5f1811a69291d
+      internalID: -278884346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455980f53c6e08841be57a46bdb6edcb
+      internalID: 1265417529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea46b5831e692248af2641ce77b05b5
+      internalID: -1583734392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b08753797a0ef6489289784b9a1cbae
+      internalID: -1078457305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0797da38201423545b9ed946e39ab28f
+      internalID: 14060301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df315266bd697b4980227818be99003
+      internalID: 2048666802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_13
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be79699946074844793fb2a905a31fd9
+      internalID: 361506024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d0bfbeb9752c646803da9a377669a7
+      internalID: 1745869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meadow-Upgrade_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029937a6395ae504ca7b7aebbe33946d
+      internalID: 37367060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -106,7 +472,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Meadow-Upgrade_0: 952073142
+      Meadow-Upgrade_1: 1950564810
+      Meadow-Upgrade_10: -1078457305
+      Meadow-Upgrade_11: 14060301
+      Meadow-Upgrade_12: 2048666802
+      Meadow-Upgrade_13: 361506024
+      Meadow-Upgrade_14: 1745869
+      Meadow-Upgrade_15: 37367060
+      Meadow-Upgrade_2: 1229367089
+      Meadow-Upgrade_3: 355281224
+      Meadow-Upgrade_4: -1680848597
+      Meadow-Upgrade_5: 2088064700
+      Meadow-Upgrade_6: 957330507
+      Meadow-Upgrade_7: -278884346
+      Meadow-Upgrade_8: 1265417529
+      Meadow-Upgrade_9: -1583734392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

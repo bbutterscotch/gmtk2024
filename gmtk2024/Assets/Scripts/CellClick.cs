@@ -246,12 +246,13 @@ public class CellClick : MonoBehaviour
                     AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
 
                     if (selectedTile.name == woodlandTileName) {
+                        Debug.Log("WOODLAND UPGRADE");
                         replaceMatches(tilemapPos, forestTile);
-                        //AudioController.instance.SetParameter(music, "Forest", 1, this.transform.position);
+                        AudioController.instance.SetParameter(music, "Forest", 1, this.transform.position);
                         AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == beekeeperTileName) {
                         replaceMatches(tilemapPos, apiaryTile);
-                        //AudioController.instance.SetParameter(music, "Apiary", 1, this.transform.position);
+                        AudioController.instance.SetParameter(music, "Apiary", 1, this.transform.position);
                         AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == gardenTileName || selectedTile.name == meadowTileName || selectedTile.name == pondTileName) {
                         // Park: garden + meadow + pond
@@ -282,7 +283,7 @@ public class CellClick : MonoBehaviour
                                 tilemap.SetTile(new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0), parkTile);
                             }
                             tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), parkTile);
-                            //AudioController.instance.SetParameter(music, "Park", 1, this.transform.position);
+                            AudioController.instance.SetParameter(music, "Park", 1, this.transform.position);
                             AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                         }
                         //print("gardens: " + gardenTiles + " | meadows: " + meadowTiles + " | ponds: " + pondTiles);
@@ -312,9 +313,9 @@ public class CellClick : MonoBehaviour
     private void replaceMatches(Vector3Int tilemapPos, AnimatedTile replacementTile) {
         // Check for at least 2 others
         matchingNeighbors = new List<Vector3Int>();
-        getMatchingNeighbors(tilemapPos, selectedTile.name);
+        getMatchingNeighbors(tilemapPos, getTileType(selectedTile.name));
 
-        //print("found " + matchingNeighbors.Count + " matching neighbors.");
+        print("found " + matchingNeighbors.Count + " matching neighbors.");
 
         if (matchingNeighbors.Count >= 3) {
             // Convert all the matches
@@ -342,7 +343,8 @@ public class CellClick : MonoBehaviour
 
         // Check neighbors of the current tile
         for (int i = 0; i < 6; i++) {
-            if (neighborNames[i].Equals(match1) && !matchingNeighbors.Contains(neighborCoords[i])) {
+            Debug.Log(neighborNames[i]);
+            if (!neighborNames[i].Equals("") && getTileType(neighborNames[i]).Equals(match1) && !matchingNeighbors.Contains(neighborCoords[i])) {
                 matchingNeighbors.Add(neighborCoords[i]);
                 getMatchingNeighbors(neighborCoords[i], match1);
             }
@@ -362,5 +364,12 @@ public class CellClick : MonoBehaviour
                 getMatchingNeighbors(neighborCoords[i], match1, match2, match3);
             }
         }
+    }
+
+    private string getTileType(string tileName)
+    {
+        string[] words = tileName.Split('_');
+        Debug.Log(words.Length);
+        return words[1];
     }
 }

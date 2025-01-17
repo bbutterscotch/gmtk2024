@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && rb.velocity.y == 0)
+        if (context.performed && rb.linearVelocity.y == 0)
         {
             Debug.Log("Jump!");
             rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
