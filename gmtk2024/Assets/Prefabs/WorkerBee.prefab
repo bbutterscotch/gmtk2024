@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43f5acc534a84847b610a0899b38138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
+  delay: 1
   beeDeathSound:
     Guid:
       Data1: -1478753232
@@ -62,6 +62,8 @@ MonoBehaviour:
       Data3: -947126116
       Data4: 1602256186
     Path: event:/Cycle Deposit
+  pathFinder: {fileID: 0}
+  pathIndex: 0
 --- !u!61 &2286493296233877179
 BoxCollider2D:
   m_ObjectHideFlags: 0

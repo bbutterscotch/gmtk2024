@@ -54,6 +54,9 @@ public class CellClick : MonoBehaviour
     private string apiaryTileName;
     private string parkTileName;
 
+    private HiveResources hv;
+    private PathFinder3 pf;
+
     [SerializeField] private EventReference tileBasicSound;
     [SerializeField] private EventReference tileAdvancedSound;
     [SerializeField] private EventReference music;
@@ -126,6 +129,8 @@ public class CellClick : MonoBehaviour
     {
         circleMask.enabled = false;
         matchingNeighbors = new List<Vector3Int>();
+        hv = FindObjectOfType<HiveResources>();
+        pf = FindObjectOfType<PathFinder3>();
 
         pondTileName = pondTile.name;
         meadowTileName = meadowTile.name;
@@ -159,12 +164,18 @@ public class CellClick : MonoBehaviour
                 if (tile == null) {
 
                     string[] neighbors = checkNeighbors(tilemapPos);
+                    int numNeighbors = 0;
 
                     // Check for at least one neighbor
                     for (int i = 0; i < 6; i++) {
                         if (!neighbors[i].Equals("")) {
-                            validPlacement = true;
-                            break;
+                            numNeighbors++;
+                            if (numNeighbors > 1)
+                            {
+                                validPlacement = true;
+                                break;
+                            }
+                            
                         }
                     }
                 }
@@ -176,7 +187,7 @@ public class CellClick : MonoBehaviour
                     selectTilemap.color = invalidOverlay;
                 }
 
-                print(validPlacement);
+                //print(validPlacement);
             }
         }
 
@@ -227,6 +238,10 @@ public class CellClick : MonoBehaviour
                         isPlacing = false;
                         circleMask.enabled = false;
                     }
+                    if (hv.BuyTile(selectedTile.name) == false)
+                    {
+                        return;
+                    }
                     tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), selectedTile);
                     AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
 
@@ -273,6 +288,8 @@ public class CellClick : MonoBehaviour
                         //print("gardens: " + gardenTiles + " | meadows: " + meadowTiles + " | ponds: " + pondTiles);
                         
                     }
+
+                    pf.getPath();
                 }
             }
         }

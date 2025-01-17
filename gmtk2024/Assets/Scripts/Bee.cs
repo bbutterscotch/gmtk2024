@@ -5,15 +5,16 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEditor.FilePathAttribute;
 using FMODUnity;
+using UnityEditor.MemoryProfiler;
 
 public class Bee : MonoBehaviour
 {
     private MapController mc;
     private Tilemap tilemap;
-    [SerializeField] private float delay = 1.0f;
-    List<int> path;
+    [SerializeField] private float delay = 2.0f;
+    List<Vector3Int> path;
     private List<Vector3Int> tiles;
-    PathFinder pf;
+    PathFinder3 pf;
     HiveResources hv;
     CycleController cc;
     private int nectar = 0;
@@ -25,6 +26,8 @@ public class Bee : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private EventReference beeDeathSound;
     [SerializeField] private EventReference cycleDepositSound;
+    public PathFinder3 pathFinder;
+    public int pathIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,14 +35,31 @@ public class Bee : MonoBehaviour
         // gets the tilemap
         mc = FindObjectOfType<MapController>();
         tilemap = mc.walkable;
-        pf = FindObjectOfType<PathFinder>();
+        tiles = getAllTiles(-10, -10, 10, 10);
+        pf = FindObjectOfType<PathFinder3>();
         hv = FindObjectOfType<HiveResources>();
         cc = FindObjectOfType<CycleController>();
         startingCycle = cc.currentCycle;
         path = pf.getPath();
-        tiles = pf.getTiles();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine(moveTile(delay, 0));
+        StartCoroutine(moveTile(delay));
+    }
+
+    public List<Vector3Int> getAllTiles(int minX, int minY, int maxX, int maxY)
+    {
+        List<Vector3Int> toReturn = new List<Vector3Int>();
+        for (int i = minX; i < maxX; i++)
+        {
+            for (int j = minY; j < maxY; j++)
+            {
+                Vector3Int location = new Vector3Int(i, j);
+                if (tilemap.HasTile(location))
+                {
+                    toReturn.Add(location);
+                }
+            }
+        }
+        return toReturn;
     }
 
     void playHitAnimation(Vector3Int location, string tileName)
@@ -68,39 +88,41 @@ public class Bee : MonoBehaviour
 
     }
 
-    IEnumerator moveTile(float delayTime, int pathIndex)
+    IEnumerator moveTile(float delayTime)
     {
-        Vector3 distance = tilemap.CellToWorld(tiles[path[pathIndex]]) - new Vector3Int(0, 0, 1) - transform.position;
+        yield return new WaitForSeconds(delayTime);
+        //path = pathFinder.findPath(tilemap.WorldToCell(this.gameObject.transform.position) + Vector3Int.back, tiles[0]);
+        Vector3 distance = tilemap.CellToWorld(path[pathIndex]) - new Vector3Int(0, 0, 1) - transform.position;
         StartCoroutine(moveOverTime(distance));
         //transform.position = tilemap.CellToWorld(tiles[path[pathIndex]]);
-        TileBase currTile = tilemap.GetTile(tiles[path[pathIndex]]);
+        TileBase currTile = tilemap.GetTile(path[pathIndex]);
         if (currTile.name.Equals("Tile_Beekeeper_Drop") || currTile.name.Equals("Tile_Beekeeper_Hit"))
         {
             honey++;
-            playHitAnimation(tiles[path[pathIndex]], "Beekeeper");
+            playHitAnimation(path[pathIndex], "Beekeeper");
         } else if (currTile.name.Equals("Tile_Pond_Drop") || currTile.name.Equals("Tile_Pond_Hit"))
         {
             nectar++;
-            playHitAnimation(tiles[path[pathIndex]], "Pond");
+            playHitAnimation(path[pathIndex], "Pond");
         } else if (currTile.name.Equals("Tile_Meadow_Drop") || currTile.name.Equals("Tile_Meadow_Hit"))
         {
             pollen++;
-            playHitAnimation(tiles[path[pathIndex]], "Meadow");
+            playHitAnimation(path[pathIndex], "Meadow");
         } else if (currTile.name.Equals("Tile_Woodland_Drop") || currTile.name.Equals("Tile_Woodland_Hit"))
         {
             wax++;
-            playHitAnimation(tiles[path[pathIndex]], "Woodland");
+            playHitAnimation(path[pathIndex], "Woodland");
         } else if (currTile.name.Equals("Tile_Garden_Drop") || currTile.name.Equals("Tile_Garden_Hit"))
         {
             royalJelly++;
-            playHitAnimation(tiles[path[pathIndex]], "Garden");
+            playHitAnimation(path[pathIndex], "Garden");
         }
-        yield return new WaitForSeconds(delayTime);
+        
         // edges refers to the index in tiles
         // while next tile does not have an edge to the current tile
         // add the previous tile until an edge with the next tile is found
         
-        if (pathIndex == path.Count - 1)
+        if (path[pathIndex] == pf.start && pathIndex != 0)
         {
             // reset resources
             hv.nectar += nectar;
@@ -125,13 +147,14 @@ public class Bee : MonoBehaviour
             }
 
             // reset path + update tiles
-            path = pf.getPath();
-            tiles = pf.getTiles();
+            path = pf.path;
+            pathIndex = 0;
             
-            StartCoroutine(moveTile(delay, 0));
+            StartCoroutine(moveTile(delay));
         } else
         {
-            StartCoroutine(moveTile(delay, pathIndex + 1));
+            pathIndex += 1;
+            StartCoroutine(moveTile(delay));
         }
         
     }
@@ -145,10 +168,10 @@ public class Bee : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 12; i++)
         {
-            transform.position += distance / 6;
-            yield return new WaitForSeconds(delay*(1.0f / 12.0f));
+            transform.position += distance / 12;
+            yield return new WaitForSeconds(delay*(1.0f / 24.0f));
         }
     }
 

@@ -12,6 +12,8 @@ public class ResourceUI : MonoBehaviour
     [SerializeField] private TMP_Text waxText;
     [SerializeField] private TMP_Text royalJellyText;
     [SerializeField] private TMP_Text beeCountText;
+
+    [SerializeField] private GameObject[] hover;
     private HiveResources hv;
 
 
@@ -19,6 +21,10 @@ public class ResourceUI : MonoBehaviour
     void Start()
     {
         hv = FindObjectOfType<HiveResources>();
+        foreach (GameObject go in hover)
+        {
+            go.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -30,5 +36,15 @@ public class ResourceUI : MonoBehaviour
         waxText.text = hv.wax.ToString();
         royalJellyText.text = hv.royalJelly.ToString();
         beeCountText.text = hv.bees.ToString();
+    }
+
+    public void OnHoverButton(GameObject hover)
+    {
+        hover.SetActive(true);
+    }
+
+    public void OnLeaveHoverButton(GameObject hover)
+    {
+        hover.SetActive(false);
     }
 }

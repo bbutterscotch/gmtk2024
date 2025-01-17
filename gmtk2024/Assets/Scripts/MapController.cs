@@ -56,27 +56,27 @@ public class MapController : MonoBehaviour
             if (i < 2)
             {
                 walkable.SetTile(positions[posIndex], gardenDropTile);
-                AudioController.instance.SetParameter(music, "Garden", 1, this.transform.position);
+                //AudioController.instance.SetParameter(music, "Garden", 1, this.transform.position);
                 hv.gardenTiles++;
             } else if (i < 4)
             {
                 walkable.SetTile(positions[posIndex], woodlandDropTile);
-                AudioController.instance.SetParameter(music, "Woodland", 1, this.transform.position);
+                //AudioController.instance.SetParameter(music, "Woodland", 1, this.transform.position);
                 hv.woodlandTiles++;
             } else if (i < 6)
             {
                 walkable.SetTile(positions[posIndex], meadowDropTile);
-                AudioController.instance.SetParameter(music, "Meadow", 1, this.transform.position);
+                //AudioController.instance.SetParameter(music, "Meadow", 1, this.transform.position);
                 hv.meadowTiles++;
             } else if (i < 9)
             {
                 walkable.SetTile(positions[posIndex], pondDropTile);
-                AudioController.instance.SetParameter(music, "Pond", 1, this.transform.position);
+                //AudioController.instance.SetParameter(music, "Pond", 1, this.transform.position);
                 hv.pondTiles++;
             } else
             {
                 walkable.SetTile(positions[posIndex], beekeeperDropTile);
-                AudioController.instance.SetParameter(music, "Beekeeper", 1, this.transform.position);
+                //AudioController.instance.SetParameter(music, "Beekeeper", 1, this.transform.position);
                 hv.beekeeperTiles++;
             }
             positions.RemoveAt(posIndex);

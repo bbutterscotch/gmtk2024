@@ -9,7 +9,7 @@ public class PathFinder : MonoBehaviour
 
     private MapController mc;
     private Tilemap tilemap;
-    [SerializeField] private float delay = 10f;
+    [SerializeField] private float delay = 100f;
     private List<Vector3Int> tiles;
     private List<int> path;
     private List<List<int>> edges;

@@ -6,22 +6,22 @@ using UnityEngine.UI;
 
 public class CycleUI : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
     [SerializeField] private TMP_Text cycleText;
-    CycleController cc;
+    [SerializeField] private GameObject sliderFull;
+    private Image sliderImage;
+    private CycleController cc;
 
     // Start is called before the first frame update
     void Start()
     {
         cc = FindObjectOfType<CycleController>();
-        slider.minValue = 0;
-        slider.maxValue = cc.cycleLength;
+        sliderImage = sliderFull.GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = cc.currentTime;
         cycleText.text = "Cycle " + cc.currentCycle.ToString();
+        sliderImage.fillAmount = cc.currentTime / cc.cycleLength;
     }
 }

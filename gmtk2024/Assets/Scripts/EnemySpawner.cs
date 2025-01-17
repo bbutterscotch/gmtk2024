@@ -71,7 +71,6 @@ public class EnemySpawner : MonoBehaviour
     public void spawnMites()
     {
         tiles = pf.getTiles();
-        Debug.Log("TEST");
         int index = Random.Range(0, tiles.Count);
         for (int x = -1; x <= 1; x++)
         {
