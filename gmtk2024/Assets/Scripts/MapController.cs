@@ -21,11 +21,16 @@ public class MapController : MonoBehaviour
     [SerializeField] public AnimatedTile woodlandHitTile;
     [SerializeField] public AnimatedTile gardenDropTile;
     [SerializeField] public AnimatedTile gardenHitTile;
+    [SerializeField] public AnimatedTile forestHitTile;
+    [SerializeField] public AnimatedTile apiaryHitTile;
+    [SerializeField] public AnimatedTile parkHitTile;
     [SerializeField] public Tile nurseryTile;
     [SerializeField] public AnimatedTile queenbeedropTile;
     [SerializeField] public Tile queenbeeTile;
     [SerializeField] public AnimatedTile queenbeeIdleTile;
     HiveResources hv;
+
+    PathFinder3 pf;
 
     [SerializeField] private EventReference music;
     [SerializeField] private EventReference queenStartSound;
@@ -33,11 +38,17 @@ public class MapController : MonoBehaviour
     public Vector3Int center = new Vector3Int(0, 0, 0);
     public Vector3Int startTile = new Vector3Int(0, 2, 0);
 
+    private void Awake()
+    {
+        hv = FindFirstObjectByType<HiveResources>();
+        pf = FindFirstObjectByType<PathFinder3>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        hv = FindObjectOfType<HiveResources>();
+        
 
         // 12 tiles to start + 1 nursery tile
         unwalkable.SetTile(center, queenbeedropTile);
@@ -45,6 +56,7 @@ public class MapController : MonoBehaviour
         unwalkable.SetTile(center + Vector3Int.up, nurseryTile);
         hv.nurseryTiles++;
         walkable.SetTile(startTile, entranceTile);
+        pf.placeTile(startTile);
 
         List<Vector3Int> positions = new List<Vector3Int> {startTile + Vector3Int.right, startTile + Vector3Int.left, 
             startTile + new Vector3Int(0, -4, 0), startTile + new Vector3Int(-1, -4, 0), startTile + new Vector3Int(1, -4, 0), 
@@ -79,6 +91,7 @@ public class MapController : MonoBehaviour
                 AudioController.instance.SetParameter(music, "Beekeeper", 1, this.transform.position);
                 hv.beekeeperTiles++;
             }
+            pf.placeTile(positions[posIndex]);
             positions.RemoveAt(posIndex);
         }
         StartCoroutine(UpdateQueenTile());

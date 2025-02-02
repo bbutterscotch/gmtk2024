@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PathFinder3 : MonoBehaviour
 {
     Dictionary<int, Vector3Int> tilesIndex;
     Dictionary<Vector3Int, int> tiles;
+    Dictionary<int, List<int>> graph;
     private MapController mc;
     private Tilemap tilemap;
     [SerializeField] public float delay = 2f;
@@ -15,36 +17,58 @@ public class PathFinder3 : MonoBehaviour
     ShortestPath sp;
     public List<Vector3Int> path;
 
-    // Start is called before the first frame update
-    public List<Vector3Int> getPath()
+    private void Awake()
     {
-        mc = FindObjectOfType<MapController>();
+        mc = FindFirstObjectByType<MapController>();
+        tiles = new Dictionary<Vector3Int, int>();
+        tilesIndex = new Dictionary<int, Vector3Int>();
+        graph = new Dictionary<int, List<int>>();
         tilemap = mc.walkable;
         sp = new ShortestPath();
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    // Start is called before the first frame update
+    public IEnumerator getPath()
+    {
+        
         path = findPath(tilemap);
-        return path;
+        //Debug.Log(GraphToString(graph, tilesIndex));
+        yield return null;
     }
 
     public List<Vector3Int> findPath(Tilemap tm)
     {
-        var tuple = getTiles(tm);
-        tiles = tuple.Item2;
+        //var tuple = getTiles(tm);
+        //tiles = tuple.Item2;
         //Debug.Log("Tiles: " + tiles.Count.ToString());
-        tilesIndex = tuple.Item1;
+        //tilesIndex = tuple.Item1;
         //Debug.Log("Tiles Index: " + tilesIndex.Count.ToString());
-        Dictionary<int, List<int>> graph = generateGraph(tm, tilesIndex, tiles);
+        //Dictionary<int, List<int>> graph = generateGraph(tm, tilesIndex, tiles);
         //Debug.Log("Graph: " + graph.Count.ToString());
         //Debug.Log(GraphToString(graph, tilesIndex));
+        float startTime = Time.realtimeSinceStartup;
         var cameFrom = sp.Search(graph);
+        float endTime = Time.realtimeSinceStartup;
+        float searchTime = endTime - startTime;
+        Debug.Log("Search Time: " + searchTime.ToString() + "s");
         List<Vector3Int> path = new List<Vector3Int>();
         if (cameFrom.Item2 != null)
         {
+            float startTime2 = Time.realtimeSinceStartup;
             List<int> pathIndex = sp.reconstructPath(cameFrom.Item1, cameFrom.Item2);
+            float endTime2 = Time.realtimeSinceStartup;
+            float reconstructTime = endTime2 - startTime2;
+            Debug.Log("Reconstruction Time: " + reconstructTime.ToString() + "s");
             path = pathIndexToLocation(pathIndex, tilesIndex);
             //Debug.Log(printPath(path));
-            path = shiftPath(path, start, goal);
-            path.Add(start);
-            Debug.Log(printPath(path));
+            path = shiftPath(path, start, goal); // O(n)
+            path.Add(start); // O(1)
+            Debug.Log(printPath(path)); // O(n)
         }
         return path;
     }
@@ -132,6 +156,8 @@ public class PathFinder3 : MonoBehaviour
         return toReturn;
     }
 
+     
+
     public List<Vector3Int> getNeighbors(Tilemap tm, Vector3Int location)
     {
         List<Vector3Int> neighbors = new List<Vector3Int>();
@@ -191,11 +217,43 @@ public class PathFinder3 : MonoBehaviour
 
     public string printPath(List<Vector3Int> path)
     {
-        string toReturn = string.Empty;
+        string toReturn = "Path: ";
         foreach (Vector3Int pos in path)
         {
             toReturn += Vector3IntToString(pos) + ", ";
         }
         return toReturn;
+    }
+
+    public bool placeTile(Vector3Int location)
+    {
+        if (tiles.ContainsKey(location))
+        {
+            Debug.LogError("Duplicate Tile");
+            return false;
+        }
+        if (!tilemap.HasTile(location))
+        {
+            Debug.LogError("Tile not in TileMap");
+            return false;
+        }
+        // Add to list of all tiles
+        int tileIndex = tiles.Count;
+        tiles.Add(location, tileIndex);
+        tilesIndex.Add(tileIndex, location);
+        // Get all the neighbors
+        List<Vector3Int> neighbors = getNeighbors(tilemap, location);
+        List<int> nodes = new List<int>();
+        foreach (Vector3Int pos in neighbors)
+        {
+            nodes.Add(tiles[pos]);
+            if (tiles.ContainsKey(pos))
+            {
+                graph[tiles[pos]].Add(tileIndex);
+            }
+        }
+        graph[tileIndex] = nodes;
+        return true;
+
     }
 }

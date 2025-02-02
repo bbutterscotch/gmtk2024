@@ -45,7 +45,7 @@ public class HiveResources : MonoBehaviour
     public bool BuyTile(string tileName)
     {
         int[] cost = { 0, 0, 0, 0, 0 };
-        Debug.Log(tileName);
+        //Debug.Log(tileName);
         if (tileName == "Tile_Pond_Drop") { cost = pondCost; }
         else if (tileName == "Tile_Meadow_Drop") { cost = meadowCost; }
         else if (tileName == "Tile_Beekeeper_Drop") { cost = beekeeperCost; }

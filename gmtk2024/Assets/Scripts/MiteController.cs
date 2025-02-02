@@ -12,7 +12,7 @@ public class MiteController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Mite!");
+        //Debug.Log("Mite!");
         beesKilled++;
         AudioController.instance.PlayOneShot(denyResourceSound, this.transform.position);
         if (beesKilled == beesToKill)

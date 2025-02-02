@@ -36,7 +36,9 @@ public class CellClick : MonoBehaviour
     [Header("Advanced Tiles")]
     public AnimatedTile forestTile; // 3+ woodland
     public AnimatedTile apiaryTile; // 3+ beekeepers
-    public AnimatedTile parkTile; // 1+ gardens, 1+ meadows, 1+ pond
+    public AnimatedTile parkPondTile; // 1+ gardens, 1+ meadows, 1+ pond
+    public AnimatedTile parkGardenTile;
+    public AnimatedTile parkMeadowTile;
 
     Vector3Int tilemapPos;
     Vector3Int prevTilePos;
@@ -140,7 +142,7 @@ public class CellClick : MonoBehaviour
 
         forestTileName = forestTile.name;
         apiaryTileName = apiaryTile.name;
-        parkTileName = parkTile.name;
+        parkTileName = parkPondTile.name;
     }
 
     void Update()
@@ -208,7 +210,7 @@ public class CellClick : MonoBehaviour
             tilemapPos = tilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
             // Check if current tile is occupied
-            AnimatedTile tile = tilemap.GetTile<AnimatedTile >(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
+            AnimatedTile tile = tilemap.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
             if (tile != null) {
                 //print("fail!");
             } else {
@@ -242,7 +244,8 @@ public class CellClick : MonoBehaviour
                     {
                         return;
                     }
-                    tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), selectedTile);
+                    tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y), selectedTile);
+                    pf.placeTile(new Vector3Int(tilemapPos.x, tilemapPos.y));
                     AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
 
                     if (selectedTile.name == woodlandTileName) {
@@ -255,9 +258,19 @@ public class CellClick : MonoBehaviour
                         AudioController.instance.SetParameter(music, "Apiary", 1, this.transform.position);
                         AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == gardenTileName || selectedTile.name == meadowTileName || selectedTile.name == pondTileName) {
+                        AnimatedTile parkTile = null;
+                        if (getTileType(selectedTile.name) == "Pond")
+                        {
+                            parkTile = parkPondTile;
+                        } else if (getTileType(selectedTile.name) == "Garden") {
+                            parkTile = parkGardenTile;
+                        } else if (getTileType(selectedTile.name) == "Meadow") {
+                            parkTile = parkMeadowTile;
+                        }
                         // Park: garden + meadow + pond
                         matchingNeighbors = new List<Vector3Int>();
                         getMatchingNeighbors(tilemapPos, gardenTileName, meadowTileName, pondTileName);
+                        //Debug.Log("Matching Neighbors: " + matchingNeighbors.Count);
 
                         // Check that there is at least one of each tile type
                         int gardenTiles = 0;
@@ -265,14 +278,14 @@ public class CellClick : MonoBehaviour
                         int pondTiles = 0;
 
                         List<string> neighborNames = getPositionNames(matchingNeighbors);
-                        neighborNames.Add(selectedTile.name);
+                        neighborNames.Add(getTileType(selectedTile.name));
 
                         for (int i = 0; i < neighborNames.Count; i++) {
-                            if (neighborNames[i] == gardenTileName) {
+                            if (neighborNames[i] == "Garden") {
                                 gardenTiles++;
-                            } else if (neighborNames[i] == meadowTileName) {
+                            } else if (neighborNames[i] == "Meadow") {
                                 meadowTiles++;
-                            } else if (neighborNames[i] == pondTileName) {
+                            } else if (neighborNames[i] == "Pond") {
                                 pondTiles++;
                             }
                         }
@@ -280,7 +293,19 @@ public class CellClick : MonoBehaviour
                         if (gardenTiles >= 1 && meadowTiles >= 1 && pondTiles >= 1) {
                             // Convert all the matches
                             for (int i = 0; i < matchingNeighbors.Count; i++) {
-                                tilemap.SetTile(new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0), parkTile);
+                                AnimatedTile toSet = null;
+                                string tileType = getTileType(tilemap.GetTile(matchingNeighbors[i]).name);
+                                if (tileType == "Garden")
+                                {
+                                    toSet = parkGardenTile;
+                                } else if (tileType == "Meadow")
+                                {
+                                    toSet = parkMeadowTile;
+                                } else if (tileType == "Pond")
+                                {
+                                    toSet = parkPondTile;
+                                }
+                                tilemap.SetTile(new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0), toSet);
                             }
                             tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), parkTile);
                             AudioController.instance.SetParameter(music, "Park", 1, this.transform.position);
@@ -290,7 +315,7 @@ public class CellClick : MonoBehaviour
                         
                     }
 
-                    pf.getPath();
+                    //pf.getPath();
                 }
             }
         }
@@ -300,9 +325,9 @@ public class CellClick : MonoBehaviour
     List<string> getPositionNames(List<Vector3Int> arr) {
         List<string> names = new List<string>();
         for (int i = 0; i < arr.Count; i++) {
-            AnimatedTile tile = tilemap.GetTile<AnimatedTile >(new Vector3Int(arr[i].x, arr[i].y, 0));
+            AnimatedTile tile = tilemap.GetTile<AnimatedTile>(new Vector3Int(arr[i].x, arr[i].y, 0));
             if (tile != null) {
-                names.Add(tile.name);
+                names.Add(getTileType(tile.name));
             } else {
                 names.Add("");
             }
@@ -315,8 +340,8 @@ public class CellClick : MonoBehaviour
         matchingNeighbors = new List<Vector3Int>();
         getMatchingNeighbors(tilemapPos, getTileType(selectedTile.name));
 
-        print("found " + matchingNeighbors.Count + " matching neighbors.");
-
+        //print("found " + matchingNeighbors.Count + " matching neighbors.");
+        
         if (matchingNeighbors.Count >= 3) {
             // Convert all the matches
             for (int i = 0; i < matchingNeighbors.Count; i++) {
@@ -343,7 +368,7 @@ public class CellClick : MonoBehaviour
 
         // Check neighbors of the current tile
         for (int i = 0; i < 6; i++) {
-            Debug.Log(neighborNames[i]);
+            //Debug.Log(neighborNames[i]);
             if (!neighborNames[i].Equals("") && getTileType(neighborNames[i]).Equals(match1) && !matchingNeighbors.Contains(neighborCoords[i])) {
                 matchingNeighbors.Add(neighborCoords[i]);
                 getMatchingNeighbors(neighborCoords[i], match1);
@@ -355,21 +380,33 @@ public class CellClick : MonoBehaviour
     void getMatchingNeighbors(Vector3Int position, string match1, string match2, string match3 /*int matches1, int matches2, int matches3*/) {
         string[] neighborNames = checkNeighbors(position);
         Vector3Int[] neighborCoords = getNeighborCoords(position);
+        string nmatch1 = getTileType(match1);
+        string nmatch2 = getTileType(match2);
+        string nmatch3 = getTileType(match3);
 
         // Check neighbors of the current tile
         for (int i = 0; i < 6; i++) {
-            if ((neighborNames[i].Equals(match1) || neighborNames[i].Equals(match2) ||
-                 neighborNames[i].Equals(match3)) && !matchingNeighbors.Contains(neighborCoords[i])) {
-                matchingNeighbors.Add(neighborCoords[i]);
-                getMatchingNeighbors(neighborCoords[i], match1, match2, match3);
+            if (!neighborNames[i].Equals("") && !matchingNeighbors.Contains(neighborCoords[i]))
+            {
+                string neighborType = getTileType(neighborNames[i]);
+                //Debug.Log(neighborType);
+                //Debug.Log(nmatch1);
+                //Debug.Log(nmatch2);
+                //Debug.Log(nmatch3);
+                if (neighborType.Equals(nmatch1) || neighborType.Equals(nmatch2) || neighborType.Equals(nmatch3))
+                {
+                    matchingNeighbors.Add(neighborCoords[i]);
+                    getMatchingNeighbors(neighborCoords[i], match1, match2, match3);
+                }
             }
+            
         }
     }
 
     private string getTileType(string tileName)
     {
         string[] words = tileName.Split('_');
-        Debug.Log(words.Length);
+        //Debug.Log(words.Length);
         return words[1];
     }
 }

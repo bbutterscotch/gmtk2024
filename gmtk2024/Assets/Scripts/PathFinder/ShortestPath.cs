@@ -14,7 +14,7 @@ public class ShortestPath
 
         Dictionary<int[], int[]> cameFrom = new Dictionary<int[], int[]>();
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) // O(n)
         {
             queue.Enqueue(new int[] { 1 << i, i, 0 });
             visited.Add((1 << i) * 16 + 1);
