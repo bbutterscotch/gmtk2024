@@ -1122,7 +1122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &359319480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1592,7 +1592,7 @@ GameObject:
   - component: {fileID: 461232365}
   - component: {fileID: 461232366}
   m_Layer: 5
-  m_Name: ResourceAmounts
+  m_Name: ResourceAmountsClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1617,9 +1617,9 @@ RectTransform:
   - {fileID: 1268195447}
   - {fileID: 581065514}
   - {fileID: 857205073}
-  - {fileID: 1484959550}
-  - {fileID: 1051601373}
   - {fileID: 1128459802}
+  - {fileID: 1051601373}
+  - {fileID: 1484959550}
   m_Father: {fileID: 891533841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19204,7 +19204,7 @@ MonoBehaviour:
         m_MethodName: Purchase
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b2af3da85736b844792663a55ee82002, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 6579c069cfc7ef3428c9184a4ddd5dae, type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Tilemaps.AnimatedTile, Unity.2D.Tilemap.Extras
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -19842,6 +19842,8 @@ MonoBehaviour:
   resourcesPanel: {fileID: 1709054166}
   resourcePanelClosed: {fileID: 1810151598}
   resourceAmounts: {fileID: 461232364}
+  resourceAmountsClosed: {fileID: 461232364}
+  resourceAmountsOpen: {fileID: 999932694}
   transformAmount: 0.21
   resourcePanelOpen: 0
   page0: {fileID: 1466486830}
@@ -19935,7 +19937,7 @@ MonoBehaviour:
         m_MethodName: Purchase
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b2af3da85736b844792663a55ee82002, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 3f05582221b5555478e49fa673d51eab, type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Tilemaps.AnimatedTile, Unity.2D.Tilemap.Extras
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -20159,6 +20161,68 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -0.000040054, y: -44.95999}
   m_SizeDelta: {x: 438.401, y: 110.36102}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &999932694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999932696}
+  - component: {fileID: 999932695}
+  m_Layer: 5
+  m_Name: ResourceAmountsOpen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &999932695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999932694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 3
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!224 &999932696
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999932694}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1666249861}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.578}
+  m_AnchorMax: {x: 1, y: 0.75100005}
+  m_AnchoredPosition: {x: -1, y: 0}
+  m_SizeDelta: {x: -2, y: -0.8504944}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1033983803
 GameObject:
@@ -21907,14 +21971,14 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.75, y: 0.76, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
   m_Mode: 1
-  m_DetectChunkCullingBounds: 0
+  m_DetectChunkCullingBounds: 1
   m_MaskInteraction: 1
 --- !u!1839735485 &1451616344
 Tilemap:
@@ -38775,11 +38839,6 @@ MonoBehaviour:
   apiaryTiles: 0
   parkTiles: 0
   nurseryTiles: 0
-  pondCost: 0400000000000000000000000000000001000000
-  meadowCost: 0000000002000000030000000000000000000000
-  beekeeperCost: 0000000000000000020000000000000003000000
-  woodlandCost: 0100000000000000020000000000000002000000
-  gardenCost: 0000000005000000000000000000000000000000
 --- !u!4 &1534643400
 Transform:
   m_ObjectHideFlags: 0
@@ -39385,7 +39444,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 15
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_Flags: 1
   m_TileAssetArray:
@@ -39772,6 +39831,7 @@ RectTransform:
   - {fileID: 1677252641}
   - {fileID: 1942284586}
   - {fileID: 2115287253}
+  - {fileID: 999932696}
   m_Father: {fileID: 1709054167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -40418,6 +40478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874512414}
   - component: {fileID: 1874512415}
+  - component: {fileID: 1874512416}
   m_Layer: 0
   m_Name: PathFinder
   m_TagString: Untagged
@@ -40456,6 +40517,20 @@ MonoBehaviour:
   start: {x: 0, y: 2, z: 0}
   goal: {x: -1, y: 2, z: 0}
   path: []
+--- !u!114 &1874512416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874512412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493015d3f20c8294f895a6c83a4ebf69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: []
+  start: {x: 0, y: 2, z: 0}
 --- !u!1 &1942284585
 GameObject:
   m_ObjectHideFlags: 0
@@ -41017,7 +41092,7 @@ MonoBehaviour:
         m_MethodName: Purchase
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b2af3da85736b844792663a55ee82002, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 15dea4439e01fa04d9ad405e48f97898, type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Tilemaps.AnimatedTile, Unity.2D.Tilemap.Extras
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -41172,7 +41247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.093, y: 0.45700002}
-  m_AnchoredPosition: {x: 1.6218262, y: 0.05999756}
+  m_AnchoredPosition: {x: 1.6218262, y: 0.059997555}
   m_SizeDelta: {x: -0.7562866, y: -0.8999939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115287254

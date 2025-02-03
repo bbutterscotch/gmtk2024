@@ -7,6 +7,7 @@ public class ShortestPath
 {
     public (Dictionary<int[], int[]>, int[]) Search(Dictionary<int, List<int>> graph)
     {
+        int counter = 0;
         int n = graph.Count;
         int allVisited = (1 << n) - 1;
         Queue <int[]> queue = new Queue <int[]>();
@@ -27,11 +28,13 @@ public class ShortestPath
             if (cur[0] == allVisited)
             {
                 Debug.Log(cur[2].ToString());
+                Debug.Log("Counter: " + counter.ToString());
                 return (cameFrom, cur);
             }
 
             foreach (int neighbor in graph[cur[1]])
             {
+                counter++;
                 int newMask = cur[0] | (1 << neighbor);
                 int hashValue = newMask * 16 + neighbor;
 

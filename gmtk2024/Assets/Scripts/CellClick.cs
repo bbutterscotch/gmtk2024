@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using FMODUnity;
+using static UnityEditor.FilePathAttribute;
 
 public class CellClick : MonoBehaviour
 {
@@ -57,11 +58,13 @@ public class CellClick : MonoBehaviour
     private string parkTileName;
 
     private HiveResources hv;
-    private PathFinder3 pf;
+    private PathFinder4 pf;
+    private EnemySpawner enemySpawner;
 
     [SerializeField] private EventReference tileBasicSound;
     [SerializeField] private EventReference tileAdvancedSound;
     [SerializeField] private EventReference music;
+    MapController mc;
 
     // Tile Neighbors
     private Vector3Int[] evenNeighbors = {
@@ -132,7 +135,9 @@ public class CellClick : MonoBehaviour
         circleMask.enabled = false;
         matchingNeighbors = new List<Vector3Int>();
         hv = FindObjectOfType<HiveResources>();
-        pf = FindObjectOfType<PathFinder3>();
+        pf = FindFirstObjectByType<PathFinder4>();
+        enemySpawner = FindFirstObjectByType<EnemySpawner>();
+        mc = FindFirstObjectByType<MapController>();
 
         pondTileName = pondTile.name;
         meadowTileName = meadowTile.name;
@@ -160,10 +165,19 @@ public class CellClick : MonoBehaviour
             // Change overlay based on whether or not tile placement is allowed
             if (isPlacing) {
                 bool validPlacement = false;
+                string tileType = getTileType(selectedTile.name);
+                if (tileType.Equals("HoneySuper") || tileType.Equals("Armory") || tileType.Equals("Nursery"))
+                {
+                    tilemap = mc.unwalkable;
+                } else
+                {
+                    tilemap = mc.walkable;
+                }
 
                 // Check current tile is null
-                AnimatedTile tile = tilemap.GetTile<AnimatedTile >(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
-                if (tile == null) {
+                AnimatedTile tile = tilemap.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
+                AnimatedTile other = mc.unwalkable.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
+                if (tilemap == mc.walkable && tile == null && other == null) {
 
                     string[] neighbors = checkNeighbors(tilemapPos);
                     int numNeighbors = 0;
@@ -180,6 +194,9 @@ public class CellClick : MonoBehaviour
                             
                         }
                     }
+                } else if (tilemap == mc.unwalkable && tile != null && getTileType(tile.name) == "BaseComb")
+                {
+                    validPlacement = true;
                 }
 
                 // Set color overlay
@@ -211,7 +228,16 @@ public class CellClick : MonoBehaviour
 
             // Check if current tile is occupied
             AnimatedTile tile = tilemap.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
-            if (tile != null) {
+            AnimatedTile other = mc.unwalkable.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
+            if (tilemap == mc.unwalkable && tile != null && getTileType(tile.name) == "BaseComb")
+            {
+                if (hv.BuyTile(selectedTile.name) == false)
+                {
+                    return;
+                }
+                tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y), selectedTile);
+                AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
+            } else if (tilemap == mc.walkable && tile != null || other != null) {
                 //print("fail!");
             } else {
                 // Check if there is at least one neighbor
@@ -227,7 +253,7 @@ public class CellClick : MonoBehaviour
                 }
                 //print(totalNeighbors);
 
-                if (totalNeighbors > 0) {
+                if (totalNeighbors > 1) {
                     // Special Cases - Advanced Tiles
                     // Forest: If placing woodland, check for 2 others
                     // Apiary: If placing beekeeper, check for 2 others
@@ -245,12 +271,15 @@ public class CellClick : MonoBehaviour
                         return;
                     }
                     tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y), selectedTile);
-                    pf.placeTile(new Vector3Int(tilemapPos.x, tilemapPos.y));
+                    pf.placeNewTile(new Vector3Int(tilemapPos.x, tilemapPos.y));
                     AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
 
                     if (selectedTile.name == woodlandTileName) {
                         Debug.Log("WOODLAND UPGRADE");
-                        replaceMatches(tilemapPos, forestTile);
+                        if (replaceMatches(tilemapPos, forestTile))
+                        {
+                            enemySpawner.spawnBear(tilemapPos);
+                        }
                         AudioController.instance.SetParameter(music, "Forest", 1, this.transform.position);
                         AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == beekeeperTileName) {
@@ -305,9 +334,13 @@ public class CellClick : MonoBehaviour
                                 {
                                     toSet = parkPondTile;
                                 }
-                                tilemap.SetTile(new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0), toSet);
+                                Vector3Int location = new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0);
+                                tilemap.SetTile(location, toSet);
+
                             }
                             tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), parkTile);
+                            // spawn dog
+                            enemySpawner.spawnEnemy(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
                             AudioController.instance.SetParameter(music, "Park", 1, this.transform.position);
                             AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                         }
@@ -335,7 +368,7 @@ public class CellClick : MonoBehaviour
         return names;
     }
 
-    private void replaceMatches(Vector3Int tilemapPos, AnimatedTile replacementTile) {
+    private bool replaceMatches(Vector3Int tilemapPos, AnimatedTile replacementTile) {
         // Check for at least 2 others
         matchingNeighbors = new List<Vector3Int>();
         getMatchingNeighbors(tilemapPos, getTileType(selectedTile.name));
@@ -345,10 +378,22 @@ public class CellClick : MonoBehaviour
         if (matchingNeighbors.Count >= 3) {
             // Convert all the matches
             for (int i = 0; i < matchingNeighbors.Count; i++) {
-                tilemap.SetTile(new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y, 0), replacementTile);
+                Vector3Int location = new Vector3Int(matchingNeighbors[i].x, matchingNeighbors[i].y);
+                tilemap.SetTile(location, replacementTile);
+                if (getTileType(replacementTile.name).Equals("Apiary"))
+                {
+                    enemySpawner.spawnMite(location);
+                }
+
             }
             tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), replacementTile);
+            if (getTileType(replacementTile.name).Equals("Apiary"))
+            {
+                enemySpawner.spawnMite(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
+            }
+            return true;
         }
+        return false;
     }
 
     public void Purchase(AnimatedTile tile) {

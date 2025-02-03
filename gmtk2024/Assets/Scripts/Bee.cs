@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using FMODUnity;
+using static UnityEditor.FilePathAttribute;
 
 public class Bee : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Bee : MonoBehaviour
     [SerializeField] public float delay = 2.0f;
     List<Vector3Int> path;
     private List<Vector3Int> tiles;
-    PathFinder3 pf;
+    PathFinder4 pf;
     HiveResources hv;
     CycleController cc;
     private int nectar = 0;
@@ -33,7 +34,7 @@ public class Bee : MonoBehaviour
         // gets the tilemap
         mc = FindObjectOfType<MapController>();
         tilemap = mc.walkable;
-        pf = FindObjectOfType<PathFinder3>();
+        pf = FindFirstObjectByType<PathFinder4>();
         hv = FindObjectOfType<HiveResources>();
         cc = FindFirstObjectByType<CycleController>();
         startingCycle = cc.currentCycle;
@@ -43,15 +44,7 @@ public class Bee : MonoBehaviour
     }
 
     void playHitAnimation(Vector3Int location, string tileName)
-    {
-        MiteController[] mites = FindObjectsOfType<MiteController>();
-        for (int i = 0; i < mites.Length; i++) { 
-            if (tilemap.WorldToCell(mites[i].transform.position) == location)
-            {
-                return;
-            }
-        }
-        
+    {        
         AnimatedTile at = null;
         if (tileName == "Pond")
         {
@@ -95,49 +88,72 @@ public class Bee : MonoBehaviour
             StartCoroutine(moveOverTime(distance));
             //transform.position = tilemap.CellToWorld(tiles[path[pathIndex]]);
             TileBase currTile = tilemap.GetTile(path[pathIndex]);
-            if (currTile.name.Equals("Tile_Beekeeper_Drop") || currTile.name.Equals("Tile_Beekeeper_Hit"))
+            MiteController[] mites = FindObjectsByType<MiteController>(FindObjectsSortMode.None);
+            bool noResources = false;
+            for (int i = 0; i < mites.Length; i++)
             {
-                honey++;
-                playHitAnimation(path[pathIndex], "Beekeeper");
-            }
-            else if (currTile.name.Equals("Tile_Pond_Drop") || currTile.name.Equals("Tile_Pond_Hit"))
-            {
-                nectar++;
-                playHitAnimation(path[pathIndex], "Pond");
-            }
-            else if (currTile.name.Equals("Tile_Meadow_Drop") || currTile.name.Equals("Tile_Meadow_Hit"))
-            {
-                pollen++;
-                playHitAnimation(path[pathIndex], "Meadow");
-            }
-            else if (currTile.name.Equals("Tile_Woodland_Drop") || currTile.name.Equals("Tile_Woodland_Hit"))
-            {
-                wax++;
-                playHitAnimation(path[pathIndex], "Woodland");
-            }
-            else if (currTile.name.Equals("Tile_Garden_Drop") || currTile.name.Equals("Tile_Garden_Hit"))
-            {
-                royalJelly++;
-                playHitAnimation(path[pathIndex], "Garden");
-            }
-            else if (currTile.name.Equals("Tile_Apiary_Upgrade") || currTile.name.Equals("Tile_Apiary_Hit"))
-            {
-                honey += 2;
-                playHitAnimation(path[pathIndex], "Apiary");
-            }
-            else if (currTile.name.Equals("Tile_Forest_Upgrade") || currTile.name.Equals("Tile_Forest_Hit"))
-            {
-                wax += 2;
-                playHitAnimation(path[pathIndex], "Forest");
-            }
-            else if (currTile.name.Equals("Tile_Pond_Upgrade") || currTile.name.Equals("Tile_Garden_Upgrade") || currTile.name.Equals("Tile_Meadow_Upgrade") || currTile.name.Equals("Tile_Park_Hit"))
-            {
-                nectar++;
-                pollen++;
-                royalJelly++;
-                playHitAnimation(path[pathIndex], "Park");
+                if (tilemap.WorldToCell(mites[i].transform.position) == path[pathIndex])
+                {
+                    noResources = true;
+                    break;
+                }
             }
 
+            EnemyController[] dogs = FindObjectsByType<EnemyController>(FindObjectsSortMode.None);
+            for (int i = 0; i < dogs.Length; i++)
+            {
+                if (tilemap.WorldToCell(dogs[i].transform.position) == path[pathIndex])
+                {
+                    noResources = true;
+                    break;
+                }
+            }
+            if (!noResources)
+            {
+                if (currTile.name.Equals("Tile_Beekeeper_Drop") || currTile.name.Equals("Tile_Beekeeper_Hit"))
+                {
+                    honey++;
+                    playHitAnimation(path[pathIndex], "Beekeeper");
+                }
+                else if (currTile.name.Equals("Tile_Pond_Drop") || currTile.name.Equals("Tile_Pond_Hit"))
+                {
+                    nectar++;
+                    playHitAnimation(path[pathIndex], "Pond");
+                }
+                else if (currTile.name.Equals("Tile_Meadow_Drop") || currTile.name.Equals("Tile_Meadow_Hit"))
+                {
+                    pollen++;
+                    playHitAnimation(path[pathIndex], "Meadow");
+                }
+                else if (currTile.name.Equals("Tile_Woodland_Drop") || currTile.name.Equals("Tile_Woodland_Hit"))
+                {
+                    wax++;
+                    playHitAnimation(path[pathIndex], "Woodland");
+                }
+                else if (currTile.name.Equals("Tile_Garden_Drop") || currTile.name.Equals("Tile_Garden_Hit"))
+                {
+                    royalJelly++;
+                    playHitAnimation(path[pathIndex], "Garden");
+                }
+                else if (currTile.name.Equals("Tile_Apiary_Upgrade") || currTile.name.Equals("Tile_Apiary_Hit"))
+                {
+                    honey += 2;
+                    playHitAnimation(path[pathIndex], "Apiary");
+                }
+                else if (currTile.name.Equals("Tile_Forest_Upgrade") || currTile.name.Equals("Tile_Forest_Hit"))
+                {
+                    wax += 2;
+                    playHitAnimation(path[pathIndex], "Forest");
+                }
+                else if (currTile.name.Equals("Tile_Pond_Upgrade") || currTile.name.Equals("Tile_Garden_Upgrade") || currTile.name.Equals("Tile_Meadow_Upgrade") || currTile.name.Equals("Tile_Park_Hit"))
+                {
+                    nectar++;
+                    pollen++;
+                    royalJelly++;
+                    playHitAnimation(path[pathIndex], "Park");
+                }
+            }
+            
             // edges refers to the index in tiles
             // while next tile does not have an edge to the current tile
             // add the previous tile until an edge with the next tile is found

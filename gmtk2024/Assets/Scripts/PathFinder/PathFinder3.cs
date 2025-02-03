@@ -243,6 +243,8 @@ public class PathFinder3 : MonoBehaviour
         tilesIndex.Add(tileIndex, location);
         // Get all the neighbors
         List<Vector3Int> neighbors = getNeighbors(tilemap, location);
+        // find which neighbor comes first in the path
+        // at tile after first neighbor
         List<int> nodes = new List<int>();
         foreach (Vector3Int pos in neighbors)
         {

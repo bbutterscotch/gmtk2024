@@ -9,6 +9,8 @@ public class OpenCloseUI : MonoBehaviour
     public GameObject resourcesPanel;
     public GameObject resourcePanelClosed;
     public GameObject resourceAmounts;
+    public GameObject resourceAmountsClosed;
+    public GameObject resourceAmountsOpen;
     public float transformAmount = 0.2f;
     //public int resourceOpenY;
     //public int resourceClosedY;
@@ -49,14 +51,24 @@ public class OpenCloseUI : MonoBehaviour
         resourcePanelOpen = true;
         resourcesPanel.SetActive(true);
         resourcePanelClosed.SetActive(false);
-        resourceAmounts.transform.position = resourceAmounts.transform.position + new Vector3(0, transformAmount * Screen.height);
+        int numChildren = resourceAmountsClosed.transform.childCount;
+        for (int i = 0; i < numChildren; i++)
+        {
+            resourceAmountsClosed.transform.GetChild(0).parent = resourceAmountsOpen.transform;
+        }
+        //resourceAmounts.transform.position = resourceAmounts.transform.position + new Vector3(0, transformAmount * Screen.height);
     }
 
     public void CloseResourcePanel() {
         resourcePanelOpen = false;
         resourcesPanel.SetActive(false);
         resourcePanelClosed.SetActive(true);
-        resourceAmounts.transform.position = resourceAmounts.transform.position - new Vector3(0, transformAmount * Screen.height);
+        int numChildren = resourceAmountsOpen.transform.childCount;
+        for (int i = 0; i < numChildren; i++)
+        {
+            resourceAmountsOpen.transform.GetChild(0).parent = resourceAmountsClosed.transform;
+        }
+        //resourceAmounts.transform.position = resourceAmounts.transform.position - new Vector3(0, transformAmount * Screen.height);
     }
 
     public void BookClick()

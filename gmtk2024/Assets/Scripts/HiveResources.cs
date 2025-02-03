@@ -24,12 +24,6 @@ public class HiveResources : MonoBehaviour
 
     public int nurseryTiles = 0;
 
-    public int[] pondCost = { 4, 0, 0, 0, 1 };
-    public int[] meadowCost = { 0, 2, 3, 0, 0 };
-    public int[] beekeeperCost = { 0, 0, 2, 0, 3 };
-    public int[] woodlandCost = { 1, 0, 2, 0, 2 };
-    public int[] gardenCost = { 0, 5, 0, 0, 0 };
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,69 +38,54 @@ public class HiveResources : MonoBehaviour
 
     public bool BuyTile(string tileName)
     {
-        int[] cost = { 0, 0, 0, 0, 0 };
-        //Debug.Log(tileName);
-        if (tileName == "Tile_Pond_Drop") { cost = pondCost; }
-        else if (tileName == "Tile_Meadow_Drop") { cost = meadowCost; }
-        else if (tileName == "Tile_Beekeeper_Drop") { cost = beekeeperCost; }
-        else if (tileName == "Tile_Woodland_Drop") { cost = woodlandCost; }
-        else if (tileName == "Tile_Garden_Drop") { cost = gardenCost; }
-        else { return false; }
-        if (cost[0] != 0)
+        if (tileName == "Tile_Pond_Drop" && honey >= 4 && wax >= 1) 
         {
-            if (honey >= cost[0])
-            {
-                honey -= cost[0];
-            }
-            else
-            {
-                return false;
-            }
+            honey -= 4;
+            wax -= 1;
         }
-        if (cost[1] != 0)
+        else if (tileName == "Tile_Meadow_Drop" && nectar >= 3 && pollen >= 2) 
         {
-            if (pollen >= cost[1])
-            {
-                pollen -= cost[1];
-            }
-            else
-            {
-                return false;
-            }
+            nectar -= 3;
+            pollen -= 2;
         }
-        if (cost[2] != 0)
+        else if (tileName == "Tile_Beekeeper_Drop" && wax >= 3 && nectar >= 2) 
         {
-            if (nectar >= cost[2])
-            {
-                nectar -= cost[2];
-            }
-            else
-            {
-                return false;
-            }
+            wax -= 3;
+            nectar -= 2;
         }
-        if (cost[3] != 0)
+        else if (tileName == "Tile_Woodland_Drop" && wax >= 2 && nectar >= 2 && honey >= 1) 
         {
-            if (wax >= cost[3])
-            {
-                wax -= cost[3];
-            }
-            else
-            {
-                return false;
-            }
+            wax -= 2;
+            honey -= 1;
+            nectar -= 2;
         }
-        if (cost[4] != 0)
+        else if (tileName == "Tile_Garden_Drop" && pollen >= 5) 
         {
-            if (royalJelly >= cost[4])
-            {
-                royalJelly -= cost[4];
-            }
-            else
-            {
-                return false;
-            }
+            pollen -= 5;
         }
+        else if (tileName == "Tile_Nursery_Spawn" && wax >= 10 && pollen >= 5 && honey >= 5)
+        {
+            wax -= 10;
+            pollen -= 5;
+            honey -= 5;
+        } else if (tileName == "Tile_HoneySuper_Spawn" && royalJelly >= 15 && honey >= 10 && nectar >= 5 && pollen >= 5)
+        {
+            royalJelly -= 15;
+            honey -= 10;
+            nectar -= 5;
+            pollen -= 5;
+        }
+        else if (tileName == "Tile_Armory_Spawn" && royalJelly >= 8 && wax >= 5 && nectar >= 5) 
+        {
+            royalJelly -= 8;
+            wax -= 5;
+            nectar -= 5;
+        }
+        else 
+        { 
+            return false; 
+        }
+
         return true;
     }
 }
