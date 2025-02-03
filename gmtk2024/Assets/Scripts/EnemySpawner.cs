@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
     Tilemap walkable;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject bear;
+    [SerializeField] GameObject bird;
     [SerializeField] GameObject mite;
     [SerializeField] private EventReference enemySpawnSound;
     private System.Random rand;
@@ -25,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
     {
         rand = new System.Random();
         pf = FindFirstObjectByType<PathFinder4>();
-        mc = FindObjectOfType<MapController>();
+        mc = FindFirstObjectByType<MapController>();
         spriteMap = mc.spriteMap;
         walkable = mc.walkable;
     }
@@ -34,16 +35,19 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            int enemy = rand.Next(0, 3);
+            int enemy = rand.Next(0, 4);
             if (enemy == 0)
             {
                 spawnBear();
             } else if (enemy == 1)
             {
                 spawnEnemy();
-            } else
+            } else if (enemy == 2)
             {
                 spawnMites();
+            } else if (enemy == 3)
+            {
+                spawnBird();
             }
         }
     }
@@ -73,6 +77,20 @@ public class EnemySpawner : MonoBehaviour
     public void spawnBear(Vector3Int loc)
     {
         Instantiate(bear, spriteMap.CellToWorld(loc), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnBird()
+    {
+        tiles = pf.path;
+        int index = rand.Next(0, tiles.Count);
+        Instantiate(bird, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnBird(Vector3Int loc)
+    {
+        Instantiate(bird, spriteMap.CellToWorld(loc), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 

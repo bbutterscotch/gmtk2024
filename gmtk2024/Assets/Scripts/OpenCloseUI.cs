@@ -54,9 +54,8 @@ public class OpenCloseUI : MonoBehaviour
         int numChildren = resourceAmountsClosed.transform.childCount;
         for (int i = 0; i < numChildren; i++)
         {
-            resourceAmountsClosed.transform.GetChild(0).parent = resourceAmountsOpen.transform;
+            resourceAmountsClosed.transform.GetChild(0).SetParent(resourceAmountsOpen.transform);
         }
-        //resourceAmounts.transform.position = resourceAmounts.transform.position + new Vector3(0, transformAmount * Screen.height);
     }
 
     public void CloseResourcePanel() {
@@ -66,9 +65,8 @@ public class OpenCloseUI : MonoBehaviour
         int numChildren = resourceAmountsOpen.transform.childCount;
         for (int i = 0; i < numChildren; i++)
         {
-            resourceAmountsOpen.transform.GetChild(0).parent = resourceAmountsClosed.transform;
+            resourceAmountsOpen.transform.GetChild(0).SetParent(resourceAmountsClosed.transform);
         }
-        //resourceAmounts.transform.position = resourceAmounts.transform.position - new Vector3(0, transformAmount * Screen.height);
     }
 
     public void BookClick()

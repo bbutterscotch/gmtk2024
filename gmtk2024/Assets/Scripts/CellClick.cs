@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using FMODUnity;
-using static UnityEditor.FilePathAttribute;
 
 public class CellClick : MonoBehaviour
 {
@@ -194,7 +193,7 @@ public class CellClick : MonoBehaviour
                             
                         }
                     }
-                } else if (tilemap == mc.unwalkable && tile != null && getTileType(tile.name) == "BaseComb")
+                } else if (tilemap == mc.unwalkable && tile != null && getTileType(tile.name).Equals("BaseComb"))
                 {
                     validPlacement = true;
                 }
@@ -229,7 +228,7 @@ public class CellClick : MonoBehaviour
             // Check if current tile is occupied
             AnimatedTile tile = tilemap.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
             AnimatedTile other = mc.unwalkable.GetTile<AnimatedTile>(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
-            if (tilemap == mc.unwalkable && tile != null && getTileType(tile.name) == "BaseComb")
+            if (tilemap == mc.unwalkable && tile != null && getTileType(tile.name).Equals("BaseComb"))
             {
                 if (hv.BuyTile(selectedTile.name) == false)
                 {
@@ -237,9 +236,10 @@ public class CellClick : MonoBehaviour
                 }
                 tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y), selectedTile);
                 AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
+                //selectedTile = null;
             } else if (tilemap == mc.walkable && tile != null || other != null) {
                 //print("fail!");
-            } else {
+            } else if (tilemap == mc.walkable && tile == null && other == null) {
                 // Check if there is at least one neighbor
 
                 string[] neighbors = checkNeighbors(tilemapPos);

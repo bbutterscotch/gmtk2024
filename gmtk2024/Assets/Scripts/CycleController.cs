@@ -19,7 +19,6 @@ public class CycleController : MonoBehaviour
     HiveResources hv;
     [SerializeField] private EventReference cycleBellSound;
     [SerializeField] private EventReference music;
-    public PathFinder3 pf;
     public bool pause = false;
 
     private void Awake()
@@ -27,34 +26,36 @@ public class CycleController : MonoBehaviour
         enemySpawner = FindFirstObjectByType<EnemySpawner>();
         beeSpawner = FindFirstObjectByType<BeeSpawner>();
         hv = FindFirstObjectByType<HiveResources>();
-        pf = FindFirstObjectByType<PathFinder3>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        StartCoroutine(initializePath(1f));
         currentCycle = 1;
         currentTime = 0f;
         StartCoroutine(updateTime());
         AudioController.instance.PlayOneShot(cycleBellSound, this.transform.position);
     }
 
-    IEnumerator initializePath(float delay)
+    IEnumerator spawnBees(int multiplier, bool fighter)
     {
-        yield return new WaitForSeconds(delay);
-        StartCoroutine(pf.getPath());
-    }
-
-    IEnumerator spawnBees(int multiplier)
-    {
-        for (int i = 0; i < hv.nurseryTiles*multiplier; i++)
+        if (!fighter)
         {
-            //Debug.Log("Bee Spawned");
-            beeSpawner.SpawnBee();
-            yield return new WaitForSeconds(0.3f);
+            for (int i = 0; i < hv.nurseryTiles * multiplier; i++)
+            {
+                //Debug.Log("Bee Spawned");
+                beeSpawner.SpawnBee();
+                yield return new WaitForSeconds(0.3f);
+            }
+        } else
+        {
+            for (int i = 0; i < hv.armoryTiles * multiplier; i++)
+            {
+                beeSpawner.SpawnFighterBee();
+                yield return new WaitForSeconds(0.3f);
+            }
         }
+        
     }
 
     IEnumerator updateTime()
@@ -65,7 +66,7 @@ public class CycleController : MonoBehaviour
             if (currentTime % Math.Ceiling(cycleLength / beesPerRound) <= 0.2 && Math.Round(currentTime) != 0)
             {
                 //Debug.Log("Spawn bee");
-                StartCoroutine(spawnBees(1));
+                StartCoroutine(spawnBees(1, false));
             }
             if (Math.Round(currentTime) == cycleLength)
             {
@@ -74,22 +75,19 @@ public class CycleController : MonoBehaviour
                 AudioController.instance.PlayOneShot(cycleBellSound, this.transform.position);
                 if (currentCycle % 2 != 0)
                 {
-                    AudioController.instance.SetParameter(music, "Cycle", 0, this.transform.position);
+                    //AudioController.instance.SetParameter(music, "Cycle", 0, this.transform.position);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Cycle", 0);
                 }
                 else
                 {
-                    AudioController.instance.SetParameter(music, "Cycle", 1, this.transform.position);
+                    //AudioController.instance.SetParameter(music, "Cycle", 1, this.transform.position);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Cycle", 1);
                 }
                 int enemiesToSpawn = (currentCycle / 5 + 1) * difficulty;
                 enemySpawner.spawnEnemies(enemiesToSpawn);
-                StartCoroutine(spawnBees(1));
-                float startTime = Time.realtimeSinceStartup;
-                StartCoroutine(pf.getPath());
-                float endTime = Time.realtimeSinceStartup;
-                float pathFindingTime = endTime - startTime;
-                Debug.Log("Path Time: " + pathFindingTime.ToString() + "s");
+                StartCoroutine(spawnBees(1, false));
+                yield return new WaitForSeconds(0.3f);
+                StartCoroutine(spawnBees(2, true));
             }
             yield return new WaitForSeconds(cycleLength / timeSteps);
             StartCoroutine(updateTime());

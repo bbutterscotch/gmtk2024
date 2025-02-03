@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMODUnity;
 
 public class ResourceUI : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class ResourceUI : MonoBehaviour
     [SerializeField] private GameObject[] hover;
     private HiveResources hv;
 
+    [SerializeField] private EventReference hoverSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        hv = FindObjectOfType<HiveResources>();
+        hv = FindFirstObjectByType<HiveResources>();
         foreach (GameObject go in hover)
         {
             go.SetActive(false);
@@ -41,6 +44,7 @@ public class ResourceUI : MonoBehaviour
     public void OnHoverButton(GameObject hover)
     {
         hover.SetActive(true);
+        AudioController.instance.PlayOneShot(hoverSound, this.transform.position);
     }
 
     public void OnLeaveHoverButton(GameObject hover)

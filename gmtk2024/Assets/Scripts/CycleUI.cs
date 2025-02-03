@@ -14,7 +14,7 @@ public class CycleUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cc = FindObjectOfType<CycleController>();
+        cc = FindFirstObjectByType<CycleController>();
         sliderImage = sliderFull.GetComponent<Image>();
     }
 

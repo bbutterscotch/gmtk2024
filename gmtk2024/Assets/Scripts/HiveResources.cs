@@ -22,7 +22,9 @@ public class HiveResources : MonoBehaviour
     public int apiaryTiles = 0;
     public int parkTiles = 0;
 
-    public int nurseryTiles = 0;
+    public int nurseryTiles = 1;
+    public int armoryTiles = 0;
+    public int honeySuperTiles = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -68,18 +70,22 @@ public class HiveResources : MonoBehaviour
             wax -= 10;
             pollen -= 5;
             honey -= 5;
-        } else if (tileName == "Tile_HoneySuper_Spawn" && royalJelly >= 15 && honey >= 10 && nectar >= 5 && pollen >= 5)
+            nurseryTiles++;
+        } 
+        else if (tileName == "Tile_HoneySuper_Spawn" && royalJelly >= 15 && honey >= 10 && nectar >= 5 && pollen >= 5)
         {
             royalJelly -= 15;
             honey -= 10;
             nectar -= 5;
             pollen -= 5;
+            honeySuperTiles++;
         }
         else if (tileName == "Tile_Armory_Spawn" && royalJelly >= 8 && wax >= 5 && nectar >= 5) 
         {
             royalJelly -= 8;
             wax -= 5;
             nectar -= 5;
+            armoryTiles++;
         }
         else 
         { 

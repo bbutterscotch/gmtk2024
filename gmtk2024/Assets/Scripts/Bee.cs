@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using FMODUnity;
-using static UnityEditor.FilePathAttribute;
 
 public class Bee : MonoBehaviour
 {
@@ -23,10 +22,11 @@ public class Bee : MonoBehaviour
     private int startingCycle;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private EventReference beeDeathSound;
+    [SerializeField] private EventReference beeAttackSound;
     [SerializeField] private EventReference cycleDepositSound;
-    public PathFinder3 pathFinder;
     public int pathIndex = 0;
     private bool mite;
+    int numCollisions = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class Bee : MonoBehaviour
         startingCycle = cc.currentCycle;
         path = pf.path;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine(moveTile(delay));
+        StartCoroutine(moveTile(delay / (hv.honeySuperTiles + 1)));
     }
 
     void playHitAnimation(Vector3Int location, string tileName)
@@ -71,8 +71,18 @@ public class Bee : MonoBehaviour
         {
             at = mc.parkHitTile;
         }
-        tilemap.SetTile(location, at);
-        tilemap.SetAnimationFrame(location, 0);
+        
+        int frame = tilemap.GetAnimationFrame(location);
+        AnimatedTile tile = tilemap.GetTile<AnimatedTile>(location);
+        int totalFrames = tilemap.GetAnimationFrameCount(location);
+        Debug.Log("Frame: " + frame);
+        Debug.Log("Total Frames: " + totalFrames);
+        if (frame == 0 || frame == totalFrames - 1)
+        {
+            tilemap.SetTile(location, at);
+            tilemap.SetAnimationFrame(location, 0);
+        }
+        
         //yield return new WaitForSeconds(at.m_AnimatedSprites.Length / at.m_MinSpeed);
         //tilemap.SetTile(location, t);
 
@@ -108,7 +118,7 @@ public class Bee : MonoBehaviour
                     break;
                 }
             }
-            if (!noResources)
+            if (!noResources && this.gameObject.tag == "WorkerBee")
             {
                 if (currTile.name.Equals("Tile_Beekeeper_Drop") || currTile.name.Equals("Tile_Beekeeper_Hit"))
                 {
@@ -160,18 +170,22 @@ public class Bee : MonoBehaviour
 
             if (path[pathIndex] == pf.start && pathIndex != 0)
             {
-                // reset resources
-                hv.nectar += nectar;
-                nectar = 0;
-                hv.pollen += pollen;
-                pollen = 0;
-                hv.honey += honey;
-                honey = 0;
-                hv.wax += wax;
-                wax = 0;
-                hv.royalJelly += royalJelly;
-                royalJelly = 0;
-                AudioController.instance.PlayOneShot(cycleDepositSound, this.transform.position);
+                if (this.gameObject.tag == "WorkerBee")
+                {
+                    // reset resources
+                    hv.nectar += nectar;
+                    nectar = 0;
+                    hv.pollen += pollen;
+                    pollen = 0;
+                    hv.honey += honey;
+                    honey = 0;
+                    hv.wax += wax;
+                    wax = 0;
+                    hv.royalJelly += royalJelly;
+                    royalJelly = 0;
+                    AudioController.instance.PlayOneShot(cycleDepositSound, this.transform.position);
+                }
+                
 
                 // Bee death
                 if (startingCycle + 10 <= cc.currentCycle)
@@ -186,12 +200,12 @@ public class Bee : MonoBehaviour
                 path = pf.path;
                 pathIndex = 0;
 
-                StartCoroutine(moveTile(delay));
+                StartCoroutine(moveTile(delay / (hv.honeySuperTiles + 1)));
             }
             else
             {
                 pathIndex += 1;
-                StartCoroutine(moveTile(delay));
+                StartCoroutine(moveTile(delay / (hv.honeySuperTiles + 1)));
             }
         } else
         {
@@ -203,17 +217,33 @@ public class Bee : MonoBehaviour
 
     IEnumerator moveOverTime(Vector3 distance)
     {
-        if (distance.x > 0)
+        if (this.gameObject.tag == "WorkerBee")
         {
-            spriteRenderer.flipX = true;
-        } else
-        {
-            spriteRenderer.flipX = false;
+            if (distance.x > 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
+            }
         }
+        else if (this.gameObject.tag == "FighterBee")
+        {
+            if (distance.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+        
         for (int i = 0; i < 12; i++)
         {
             transform.position += distance / 12;
-            yield return new WaitForSeconds(delay*(1.0f / 24.0f));
+            yield return new WaitForSeconds((delay / (hv.honeySuperTiles + 1)) * (1.0f / 24.0f));
         }
     }
 
@@ -221,46 +251,47 @@ public class Bee : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            //Debug.Log("Enemy!");
-            hv.bees--;
-            Destroy(gameObject);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
-            AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+            numCollisions += 1;
+            if (numCollisions == 1)
+            {
+                Destroy(gameObject);
+                if (this.gameObject.tag == "FighterBee")
+                {
+                    Destroy(collision.gameObject);
+                }
+                //Debug.Log("Enemy!");
+                hv.bees--;
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
+                AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+            }
+            
+            
+            
             //AudioController.instance.PlayOneShot(denyResourceSound, this.transform.position);
 
         } 
-        if (collision.tag == "Mite")
+        else if (collision.tag == "Mite")
         {
-            mite = true;
+            numCollisions += 1;
+            if (numCollisions == 1)
+            {
+                if (this.gameObject.tag == "FighterBee")
+                {
+                    Destroy(gameObject);
+                    hv.bees--;
+                    Destroy(collision.gameObject);
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
+                    AudioController.instance.PlayOneShot(beeAttackSound, this.transform.position);
+                    AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+
+                } else
+                {
+                    numCollisions -= 1;
+                }
+            }
+            
+            
         }
         // else wave hi to other bee
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Mite")
-        {
-            if (nectar > 0)
-            {
-                nectar--;
-            }
-            if (pollen > 0)
-            {
-                pollen--;
-            }
-            if (honey > 0) 
-            { 
-                honey--;
-            }
-            if (wax > 0)
-            {
-                wax--;
-            }
-            if (royalJelly > 0)
-            {
-                royalJelly--;
-            }
-        }
-        mite = false;
     }
 }

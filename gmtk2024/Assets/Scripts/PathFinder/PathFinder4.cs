@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static UnityEditor.FilePathAttribute;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PathFinder4 : MonoBehaviour
 {

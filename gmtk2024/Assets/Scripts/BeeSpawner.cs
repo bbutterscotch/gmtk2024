@@ -12,6 +12,7 @@ public class BeeSpawner : MonoBehaviour
     private Tilemap tilemap;
     private HiveResources hv;
     [SerializeField] List<Sprite> beeTypes;
+    [SerializeField] Sprite fighterBee;
 
     [SerializeField] private EventReference beeSpawnSound;
 
@@ -30,6 +31,17 @@ public class BeeSpawner : MonoBehaviour
         GameObject newBee = Instantiate(beePrefab, tilemap.CellToWorld(mc.startTile), Quaternion.identity);
         SpriteRenderer newSprite = newBee.GetComponent<SpriteRenderer>();
         newSprite.sprite = beeTypes[Random.Range(0, beeTypes.Count)];
+        AudioController.instance.PlayOneShot(beeSpawnSound, this.transform.position);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
+    }
+
+    public void SpawnFighterBee()
+    {
+        hv.bees++;
+        GameObject newBee = Instantiate(beePrefab, tilemap.CellToWorld(mc.startTile), Quaternion.identity);
+        newBee.tag = "FighterBee";
+        SpriteRenderer newSprite = newBee.GetComponent<SpriteRenderer>();
+        newSprite.sprite = fighterBee;
         AudioController.instance.PlayOneShot(beeSpawnSound, this.transform.position);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
     }
