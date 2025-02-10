@@ -62,6 +62,7 @@ public class CellClick : MonoBehaviour
 
     [SerializeField] private EventReference tileBasicSound;
     [SerializeField] private EventReference tileAdvancedSound;
+    [SerializeField] private EventReference cellClickSound;
     [SerializeField] private EventReference music;
     MapController mc;
 
@@ -204,7 +205,7 @@ public class CellClick : MonoBehaviour
                 } else {
                     selectTilemap.color = invalidOverlay;
                 }
-
+                AudioController.instance.PlayOneShot(cellClickSound, this.transform.position);
                 //print(validPlacement);
             }
         }

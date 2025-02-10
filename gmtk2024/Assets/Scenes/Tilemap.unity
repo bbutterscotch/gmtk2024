@@ -39640,7 +39640,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 15
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_Flags: 1
   m_TileAssetArray:
@@ -41261,6 +41261,13 @@ MonoBehaviour:
       Data3: 232816036
       Data4: 244895855
     Path: event:/SFX/Tile/Advanced
+  cellClickSound:
+    Guid:
+      Data1: 201164619
+      Data2: 1303484478
+      Data3: 1975516807
+      Data4: 1202703034
+    Path: event:/SFX/UI/Hover
   music:
     Guid:
       Data1: -94178437
