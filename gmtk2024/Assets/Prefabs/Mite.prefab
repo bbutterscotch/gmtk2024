@@ -144,4 +144,4 @@ MonoBehaviour:
       Data2: 1198004690
       Data3: 1345848971
       Data4: -1529793205
-    Path: event:/Enemy Deny Source
+    Path: event:/SFX/Enemy/Deny Resource

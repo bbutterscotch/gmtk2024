@@ -1,30 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8717806955988027632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee E 2/Beemony
-  m_EditorClassIdentifier: 
-  Name: Beemony
-  StudioPath: 
-  Min: 0
-  Max: 40
-  Default: 0
-  ID:
-    data1: 2284705100
-    data2: 3017063709
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-7876845322885743325
+--- !u!114 &-9153519231990560014
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Cycle Bell
+  m_Name: event:/SFX/UI/Cancel
   m_EditorClassIdentifier: 
-  Path: event:/Cycle Bell
+  Path: event:/SFX/UI/Cancel
   Guid:
-    Data1: 731681489
-    Data2: 1177954069
-    Data3: 1160882562
-    Data4: 540630932
+    Data1: -1802964277
+    Data2: 1108311463
+    Data3: 288193714
+    Data4: 1295345506
   Banks:
   - {fileID: 4053519600137474634}
   IsStream: 0
@@ -51,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-7255086787002414561
+--- !u!114 &-9060388568280524117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,147 +37,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee G/Beemony Mute
+  m_Name: parameter:/Main Theme/Armoury
   m_EditorClassIdentifier: 
-  Name: Beemony Mute
+  Name: Armoury
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 266345868
-    data2: 3701746981
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-7084548560704378382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee E/Beemony
-  m_EditorClassIdentifier: 
-  Name: Beemony
-  StudioPath: 
-  Min: 0
-  Max: 40
-  Default: 0
-  ID:
-    data1: 2284705100
-    data2: 3017063709
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-6628772335527226078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tile Basic
-  m_EditorClassIdentifier: 
-  Path: event:/Tile Basic
-  Guid:
-    Data1: 2033527198
-    Data2: 1324773387
-    Data3: 1312664990
-    Data4: -1589784183
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6483130852732769660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Beemony
-  m_EditorClassIdentifier: 
-  Name: Beemony
-  StudioPath: 
-  Min: 0
-  Max: 40
-  Default: 0
-  ID:
-    data1: 2284705100
-    data2: 3017063709
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-6482313521093652333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Woodland
-  m_EditorClassIdentifier: 
-  Name: Woodland
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4143726084
-    data2: 861433105
+    data1: 3818756579
+    data2: 2271165335
   Type: 1
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-6470612302586406583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Cycle Deposit
-  m_EditorClassIdentifier: 
-  Path: event:/Cycle Deposit
-  Guid:
-    Data1: 584551521
-    Data2: 1097762054
-    Data3: -947126116
-    Data4: 1602256186
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6225867085914749730
+--- !u!114 &-8656692364125462164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,7 +61,84 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee E 2/Beemony Mute
+  m_Name: parameter:/C/Beemony
+  m_EditorClassIdentifier: 
+  Name: Beemony
+  StudioPath: 
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 2284705100
+    data2: 3017063709
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8569924980594143889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Garden
+  m_EditorClassIdentifier: 
+  Name: Garden
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2505072785
+    data2: 3926927288
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-8289752902569808874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Beemony/E
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Beemony/E
+  Guid:
+    Data1: -761610181
+    Data2: 1134826212
+    Data3: -2142477150
+    Data4: 1407592894
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6122916025699059778}
+  - {fileID: -5303506735543319273}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5647
+--- !u!114 &-7175344320543138195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/C/Beemony Mute
   m_EditorClassIdentifier: 
   Name: Beemony Mute
   StudioPath: 
@@ -225,34 +152,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-5513069817963259706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bee Death
-  m_EditorClassIdentifier: 
-  Path: event:/Bee Death
-  Guid:
-    Data1: -1478753232
-    Data2: 1288200908
-    Data3: 1626064297
-    Data4: 1545551254
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5400164745598086548
+--- !u!114 &-7130467783928549326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,120 +162,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee/Beemony
+  m_Name: parameter:/Main Theme/Meadow
   m_EditorClassIdentifier: 
-  Name: Beemony
-  StudioPath: 
-  Min: 0
-  Max: 40
-  Default: 0
-  ID:
-    data1: 2284705100
-    data2: 3017063709
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-4879610231116716631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee G/Beemony
-  m_EditorClassIdentifier: 
-  Name: Beemony
-  StudioPath: 
-  Min: 0
-  Max: 40
-  Default: 0
-  ID:
-    data1: 2284705100
-    data2: 3017063709
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-4679196208386973668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bee Attack
-  m_EditorClassIdentifier: 
-  Path: event:/Bee Attack
-  Guid:
-    Data1: -1404745072
-    Data2: 1170825079
-    Data3: 546813345
-    Data4: -669262715
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4556936025516934447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tile Hive/Hive Upgrade
-  m_EditorClassIdentifier: 
-  Name: Hive Upgrade
-  StudioPath: 
-  Min: -1
-  Max: 5
-  Default: 0
-  ID:
-    data1: 1328266713
-    data2: 4060453489
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-4493420027669387022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Cycle
-  m_EditorClassIdentifier: 
-  Name: Cycle
+  Name: Meadow
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 288033980
-    data2: 3492274214
+    data1: 2388064675
+    data2: 2250596472
   Type: 1
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4420173347740869527
+--- !u!114 &-6837210831257141586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,7 +186,133 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Forest
+  m_Name: parameter:/G/Beemony
+  m_EditorClassIdentifier: 
+  Name: Beemony
+  StudioPath: 
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 2284705100
+    data2: 3017063709
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6463233393925007237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Spawn Armoured
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Spawn Armoured
+  Guid:
+    Data1: -1132776957
+    Data2: 1222683655
+    Data3: -880948546
+    Data4: 1846033651
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6348876692024579891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Tile/Advanced
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Tile/Advanced
+  Guid:
+    Data1: -1305114401
+    Data2: 1131772131
+    Data3: 232816036
+    Data4: 244895855
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6012830484550584293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Apiary
+  m_EditorClassIdentifier: 
+  Name: Apiary
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 249115700
+    data2: 1360203234
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5303506735543319273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/E/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5191954364998623149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Forest
   m_EditorClassIdentifier: 
   Name: Forest
   StudioPath: 
@@ -399,7 +326,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4406133793416599644
+--- !u!114 &-5000603994356580658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,49 +336,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music Bee G
+  m_Name: event:/SFX/Tile/Tonal/Hive
   m_EditorClassIdentifier: 
-  Path: event:/Music Bee G
+  Path: event:/SFX/Tile/Tonal/Hive
   Guid:
-    Data1: -2372543
-    Data2: 1109933180
-    Data3: -468034147
-    Data4: -816547497
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7255086787002414561}
-  - {fileID: -4879610231116716631}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5649
---- !u!114 &-4180384512072949958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI Cancel
-  m_EditorClassIdentifier: 
-  Path: event:/UI Cancel
-  Guid:
-    Data1: 728675580
-    Data2: 1286026393
-    Data3: -1447237462
-    Data4: -1774496435
+    Data1: 1253128312
+    Data2: 1080355886
+    Data3: 788750979
+    Data4: 629964209
   Banks:
   - {fileID: 4053519600137474634}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -2652811284907164741}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4648273251903396315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Spawn
+  Guid:
+    Data1: 518076097
+    Data2: 1242504950
+    Data3: 2000316566
+    Data4: 233577616
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2039641942861920016}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -479,7 +406,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-3574924524276396680
+--- !u!114 &-3448186956123909737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,14 +416,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Lose
+  m_Name: event:/SFX/Bee/Attack
   m_EditorClassIdentifier: 
-  Path: event:/Lose
+  Path: event:/SFX/Bee/Attack
   Guid:
-    Data1: 2084920614
-    Data2: 1206855833
-    Data3: 26164628
-    Data4: 1505636872
+    Data1: -1404745072
+    Data2: 1170825079
+    Data3: 546813345
+    Data4: -669262715
   Banks:
   - {fileID: 4053519600137474634}
   IsStream: 0
@@ -506,7 +433,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3008578311665986573
+--- !u!114 &-2881121866706454100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -516,52 +443,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music Bee
+  m_Name: event:/SFX/UI/Unpause
   m_EditorClassIdentifier: 
-  Path: event:/Music Bee
+  Path: event:/SFX/UI/Unpause
   Guid:
-    Data1: -1919395662
-    Data2: 1273832902
-    Data3: -239507782
-    Data4: -712109689
+    Data1: -1949844767
+    Data2: 1222739814
+    Data3: 803699106
+    Data4: -484782869
   Banks:
   - {fileID: 4053519600137474634}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -5400164745598086548}
+  - {fileID: 903743537130108480}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1624355548095724761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tile Advanced
-  m_EditorClassIdentifier: 
-  Path: event:/Tile Advanced
-  Guid:
-    Data1: -1305114401
-    Data2: 1131772131
-    Data3: 232816036
-    Data4: 244895855
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1166081880258633273
+--- !u!114 &-2652811284907164741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,20 +471,98 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Garden
+  m_Name: parameter:/Hive/Hive Upgrade
   m_EditorClassIdentifier: 
-  Name: Garden
+  Name: Hive Upgrade
   StudioPath: 
-  Min: 0
-  Max: 1
+  Min: -1
+  Max: 5
   Default: 0
   ID:
-    data1: 2505072785
-    data2: 3926927288
+    data1: 1328266713
+    data2: 4060453489
   Type: 1
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-2281772333130934878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Death
+  Guid:
+    Data1: -1478753232
+    Data2: 1288200908
+    Data3: 1626064297
+    Data4: 1545551254
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2036149034274878636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hive/Hive Upgrade
+  m_EditorClassIdentifier: 
+  Name: Hive Upgrade
+  StudioPath: 
+  Min: -1
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1328266713
+    data2: 4060453489
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1689593428453733527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Cycle/Deposit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Cycle/Deposit
+  Guid:
+    Data1: 584551521
+    Data2: 1097762054
+    Data3: -947126116
+    Data4: 1602256186
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1134776467689801035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,12 +578,12 @@ MonoBehaviour:
   Path: FMODAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638725638731977482
+  lastModified: 638747322864428259
   FileSizes:
   - Name: 
-    Value: 2390
+    Value: 2892
   Exists: 1
---- !u!114 &-765387135711370267
+--- !u!114 &-1129291426642670367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -615,26 +593,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music Bee E
+  m_Name: event:/SFX/Bee/Beemony/Beemony
   m_EditorClassIdentifier: 
-  Path: event:/Music Bee E
+  Path: event:/SFX/Bee/Beemony/Beemony
   Guid:
-    Data1: -761610181
-    Data2: 1134826212
-    Data3: -2142477150
-    Data4: 1407592894
+    Data1: -1919395662
+    Data2: 1273832902
+    Data3: -239507782
+    Data4: -712109689
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1441166434161223807}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1034009982134532629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Beemony/G
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Beemony/G
+  Guid:
+    Data1: -2372543
+    Data2: 1109933180
+    Data3: -468034147
+    Data4: -816547497
   Banks:
   - {fileID: 4053519600137474634}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7084548560704378382}
-  - {fileID: 1969441465588088283}
+  - {fileID: 8936116794341660166}
+  - {fileID: -6837210831257141586}
   MinDistance: 1
   MaxDistance: 20
-  Length: 5647
---- !u!114 &-674690283524658536
+  Length: 5649
+--- !u!114 &-911534489590097687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,24 +650,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music 2
+  m_Name: event:/SFX/Tile/Queen
   m_EditorClassIdentifier: 
-  Path: event:/Music 2
+  Path: event:/SFX/Tile/Queen
   Guid:
-    Data1: 993204809
-    Data2: 1232177341
-    Data3: -561953892
-    Data4: 1364737187
+    Data1: 1863808012
+    Data2: 1176874300
+    Data3: 333844615
+    Data4: 1417393681
   Banks:
   - {fileID: 4053519600137474634}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 33882
---- !u!114 &-603395790170554537
+  Length: 0
+--- !u!114 &-815186396769607139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -671,36 +677,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
+  m_Name: event:/SFX/UI/Select
   m_EditorClassIdentifier: 
-  Path: event:/Music
+  Path: event:/SFX/UI/Select
   Guid:
-    Data1: -94178437
-    Data2: 1121069517
-    Data3: 1870735784
-    Data4: -2073880398
+    Data1: -798613278
+    Data2: 1217080393
+    Data3: -1507454544
+    Data4: 681895724
   Banks:
   - {fileID: 4053519600137474634}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 4579072398734828110}
-  - {fileID: 4128965242996974748}
-  - {fileID: 6673313792145461423}
-  - {fileID: -6483130852732769660}
-  - {fileID: -4493420027669387022}
-  - {fileID: -1166081880258633273}
-  - {fileID: 9136041593458476811}
-  - {fileID: 74462177403902566}
-  - {fileID: 1537667594429594608}
-  - {fileID: 8562311987645275841}
-  - {fileID: 4388778805332337727}
-  - {fileID: -6482313521093652333}
-  - {fileID: -4420173347740869527}
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 33882
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,43 +710,46 @@ MonoBehaviour:
   - {fileID: -1134776467689801035}
   - {fileID: 4053519600137474634}
   EditorEvents:
-  - {fileID: 3527730660387822375}
-  - {fileID: 3765962126726270105}
-  - {fileID: -3574924524276396680}
-  - {fileID: 2051672736381569426}
-  - {fileID: -5513069817963259706}
-  - {fileID: 2773701279826617300}
-  - {fileID: 6589743394560651877}
-  - {fileID: 7740455277579608920}
-  - {fileID: -765387135711370267}
-  - {fileID: -4406133793416599644}
-  - {fileID: -674690283524658536}
-  - {fileID: 5626472719975975755}
-  - {fileID: -6470612302586406583}
-  - {fileID: 1710272423682219848}
-  - {fileID: -603395790170554537}
-  - {fileID: -4679196208386973668}
-  - {fileID: -6628772335527226078}
-  - {fileID: 5215270782700465091}
-  - {fileID: -3008578311665986573}
-  - {fileID: 6397715553566195239}
-  - {fileID: 1457765954515570463}
-  - {fileID: -7876845322885743325}
-  - {fileID: -1624355548095724761}
-  - {fileID: 8118588029436572164}
-  - {fileID: -4180384512072949958}
+  - {fileID: -6463233393925007237}
+  - {fileID: -911534489590097687}
+  - {fileID: 8921649803306945078}
+  - {fileID: -2281772333130934878}
+  - {fileID: 1135267481033378608}
+  - {fileID: 7501968409988131138}
+  - {fileID: 7052378038280100621}
+  - {fileID: -8289752902569808874}
+  - {fileID: -1034009982134532629}
+  - {fileID: 8344047270356360636}
+  - {fileID: 2970596679513191212}
+  - {fileID: -1689593428453733527}
+  - {fileID: -5000603994356580658}
+  - {fileID: 1523268875306637302}
+  - {fileID: -3448186956123909737}
+  - {fileID: 7856181057859850671}
+  - {fileID: 4977937155326403342}
+  - {fileID: -1129291426642670367}
+  - {fileID: 2820455292589797104}
+  - {fileID: -4648273251903396315}
+  - {fileID: -9153519231990560014}
+  - {fileID: 2082825553060275045}
+  - {fileID: 6076606141370601716}
+  - {fileID: -6348876692024579891}
+  - {fileID: -2881121866706454100}
+  - {fileID: -815186396769607139}
+  - {fileID: 6436866996672093992}
   EditorParameters:
   - {fileID: 3547484629691802561}
   - {fileID: 4803866106335018466}
   - {fileID: -4015624348426740873}
   - {fileID: 901546429454264382}
+  - {fileID: 7256498069926828598}
   MasterBanks:
   - {fileID: 4053519600137474634}
   StringsBanks:
   - {fileID: -1134776467689801035}
-  cacheTime: 638725638731977482
+  cacheTime: 638747322864428259
   cacheVersion: 131621
---- !u!114 &74462177403902566
+--- !u!114 &212973839387442914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -763,18 +759,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Armoury
+  m_Name: parameter:/Main Theme/Beemony Mute
   m_EditorClassIdentifier: 
-  Name: Armoury
+  Name: Beemony Mute
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 3818756579
-    data2: 2271165335
+    data1: 266345868
+    data2: 3701746981
   Type: 1
-  IsGlobal: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &233624153192606359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Paused
+  m_EditorClassIdentifier: 
+  Name: Paused
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 800923421
+    data2: 2060741762
+  Type: 1
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &901546429454264382
@@ -801,7 +821,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &905870523593913431
+--- !u!114 &903743537130108480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -811,45 +831,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Tonal Hive/Hive Upgrade
+  m_Name: parameter:/Unpause/Paused
   m_EditorClassIdentifier: 
-  Name: Hive Upgrade
-  StudioPath: 
-  Min: -1
-  Max: 5
-  Default: 0
-  ID:
-    data1: 1328266713
-    data2: 4060453489
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &1300303527444659562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Bee Spawn/Beemony Mute
-  m_EditorClassIdentifier: 
-  Name: Beemony Mute
+  Name: Paused
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 266345868
-    data2: 3701746981
+    data1: 800923421
+    data2: 2060741762
   Type: 1
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &1457765954515570463
+--- !u!114 &1135267481033378608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -859,166 +855,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bee Spawn
+  m_Name: event:/SFX/Enemy/Deny Resource
   m_EditorClassIdentifier: 
-  Path: event:/Bee Spawn
-  Guid:
-    Data1: 518076097
-    Data2: 1242504950
-    Data3: 2000316566
-    Data4: 233577616
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 1300303527444659562}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1537667594429594608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Meadow
-  m_EditorClassIdentifier: 
-  Name: Meadow
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2388064675
-    data2: 2250596472
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1710272423682219848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tonal Hive
-  m_EditorClassIdentifier: 
-  Path: event:/Tonal Hive
-  Guid:
-    Data1: 1253128312
-    Data2: 1080355886
-    Data3: 788750979
-    Data4: 629964209
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 905870523593913431}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1969441465588088283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee E/Beemony Mute
-  m_EditorClassIdentifier: 
-  Name: Beemony Mute
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 266345868
-    data2: 3701746981
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &2051672736381569426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music Bee E 2
-  m_EditorClassIdentifier: 
-  Path: event:/Music Bee E 2
-  Guid:
-    Data1: -1134031826
-    Data2: 1138727110
-    Data3: -1600207724
-    Data4: -247342778
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -8717806955988027632}
-  - {fileID: -6225867085914749730}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5647
---- !u!114 &2546525242709437466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee C/Beemony Mute
-  m_EditorClassIdentifier: 
-  Name: Beemony Mute
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 266345868
-    data2: 3701746981
-  Type: 1
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &2773701279826617300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy Deny Source
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy Deny Source
+  Path: event:/SFX/Enemy/Deny Resource
   Guid:
     Data1: 217264432
     Data2: 1198004690
@@ -1033,7 +872,31 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3527730660387822375
+--- !u!114 &1441166434161223807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Beemony/Beemony
+  m_EditorClassIdentifier: 
+  Name: Beemony
+  StudioPath: 
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 2284705100
+    data2: 3017063709
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &1523268875306637302
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1043,14 +906,181 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bee Spawn Armoured
+  m_Name: event:/Music/Main Theme
   m_EditorClassIdentifier: 
-  Path: event:/Bee Spawn Armoured
+  Path: event:/Music/Main Theme
   Guid:
-    Data1: -1132776957
-    Data2: 1222683655
-    Data3: -880948546
-    Data4: 1846033651
+    Data1: -94178437
+    Data2: 1121069517
+    Data3: 1870735784
+    Data4: -2073880398
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5520345680774739279}
+  - {fileID: -6012830484550584293}
+  - {fileID: 4228048058993140243}
+  - {fileID: 2132400125158968311}
+  - {fileID: 233624153192606359}
+  - {fileID: 6710234337124777574}
+  - {fileID: -8569924980594143889}
+  - {fileID: 212973839387442914}
+  - {fileID: -9060388568280524117}
+  - {fileID: -7130467783928549326}
+  - {fileID: 5766046730630152038}
+  - {fileID: 1803484495168988850}
+  - {fileID: 3799198310041947622}
+  - {fileID: -5191954364998623149}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33882
+--- !u!114 &1803484495168988850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Nursery
+  m_EditorClassIdentifier: 
+  Name: Nursery
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4088008851
+    data2: 763509213
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2039641942861920016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Spawn/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2082825553060275045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Cycle/Bell
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Cycle/Bell
+  Guid:
+    Data1: 731681489
+    Data2: 1177954069
+    Data3: 1160882562
+    Data4: 540630932
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2132400125158968311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Beemony
+  m_EditorClassIdentifier: 
+  Name: Beemony
+  StudioPath: 
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 2284705100
+    data2: 3017063709
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2820455292589797104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Tile/Tonal/Tile
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Tile/Tonal/Tile
+  Guid:
+    Data1: -1641364556
+    Data2: 1287507887
+    Data3: -653191513
+    Data4: -273298862
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2970596679513191212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Hover
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Hover
+  Guid:
+    Data1: 201164619
+    Data2: 1303484478
+    Data3: 1975516807
+    Data4: 1202703034
   Banks:
   - {fileID: 4053519600137474634}
   IsStream: 0
@@ -1084,7 +1114,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &3765962126726270105
+--- !u!114 &3799198310041947622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1093,24 +1123,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tile Queen Bee
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Woodland
   m_EditorClassIdentifier: 
-  Path: event:/Tile Queen Bee
-  Guid:
-    Data1: 1863808012
-    Data2: 1176874300
-    Data3: 333844615
-    Data4: 1417393681
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Woodland
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4143726084
+    data2: 861433105
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4053519600137474634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,10 +1153,10 @@ MonoBehaviour:
   Path: FMODAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638725638731972480
+  lastModified: 638747322864355711
   FileSizes: []
   Exists: 1
---- !u!114 &4128965242996974748
+--- !u!114 &4228048058993140243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1139,64 +1166,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Apiary
+  m_Name: parameter:/Main Theme/Park
   m_EditorClassIdentifier: 
-  Name: Apiary
+  Name: Park
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 249115700
-    data2: 1360203234
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &4388778805332337727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Nursery
-  m_EditorClassIdentifier: 
-  Name: Nursery
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4088008851
-    data2: 763509213
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &4579072398734828110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Super
-  m_EditorClassIdentifier: 
-  Name: Super
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2305019730
-    data2: 3795581617
+    data1: 2682417652
+    data2: 2953488746
   Type: 1
   IsGlobal: 0
   Labels: []
@@ -1225,7 +1204,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &5215270782700465091
+--- !u!114 &4977937155326403342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1235,9 +1214,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy Spawn
+  m_Name: event:/SFX/Enemy/Spawn
   m_EditorClassIdentifier: 
-  Path: event:/Enemy Spawn
+  Path: event:/SFX/Enemy/Spawn
   Guid:
     Data1: 10639012
     Data2: 1222045156
@@ -1252,90 +1231,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5626472719975975755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI Hover
-  m_EditorClassIdentifier: 
-  Path: event:/UI Hover
-  Guid:
-    Data1: 201164619
-    Data2: 1303484478
-    Data3: 1975516807
-    Data4: 1202703034
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6397715553566195239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tonal Tile
-  m_EditorClassIdentifier: 
-  Path: event:/Tonal Tile
-  Guid:
-    Data1: -1641364556
-    Data2: 1287507887
-    Data3: -653191513
-    Data4: -273298862
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6589743394560651877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music Bee C
-  m_EditorClassIdentifier: 
-  Path: event:/Music Bee C
-  Guid:
-    Data1: 1395624498
-    Data2: 1289266421
-    Data3: 1006789797
-    Data4: 1668044833
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 6792555237513182107}
-  - {fileID: 2546525242709437466}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 7058
---- !u!114 &6673313792145461423
+--- !u!114 &5157839585543999695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1345,31 +1241,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Park
-  m_EditorClassIdentifier: 
-  Name: Park
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2682417652
-    data2: 2953488746
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &6792555237513182107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music Bee C/Beemony
+  m_Name: parameter:/E 2/Beemony
   m_EditorClassIdentifier: 
   Name: Beemony
   StudioPath: 
@@ -1383,62 +1255,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &7740455277579608920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Tile Hive
-  m_EditorClassIdentifier: 
-  Path: event:/Tile Hive
-  Guid:
-    Data1: 1483521081
-    Data2: 1153506094
-    Data3: 1359886264
-    Data4: -958992150
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -4556936025516934447}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8118588029436572164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI Select
-  m_EditorClassIdentifier: 
-  Path: event:/UI Select
-  Guid:
-    Data1: -798613278
-    Data2: 1217080393
-    Data3: -1507454544
-    Data4: 681895724
-  Banks:
-  - {fileID: 4053519600137474634}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8562311987645275841
+--- !u!114 &5520345680774739279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1448,7 +1265,55 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Beekeeper
+  m_Name: parameter:/Main Theme/Super
+  m_EditorClassIdentifier: 
+  Name: Super
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2305019730
+    data2: 3795581617
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5692533644199844061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Pause/Paused
+  m_EditorClassIdentifier: 
+  Name: Paused
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 800923421
+    data2: 2060741762
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &5766046730630152038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Beekeeper
   m_EditorClassIdentifier: 
   Name: Beekeeper
   StudioPath: 
@@ -1462,7 +1327,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &9136041593458476811
+--- !u!114 &6076606141370601716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Pause
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Pause
+  Guid:
+    Data1: -648867371
+    Data2: 1333962096
+    Data3: 671542913
+    Data4: -837857813
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &6122916025699059778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1472,7 +1364,271 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Beemony Mute
+  m_Name: parameter:/E/Beemony
+  m_EditorClassIdentifier: 
+  Name: Beemony
+  StudioPath: 
+  Min: 0
+  Max: 40
+  Default: 0
+  ID:
+    data1: 2284705100
+    data2: 3017063709
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6271403728523298074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/E 2/Beemony Mute
+  m_EditorClassIdentifier: 
+  Name: Beemony Mute
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266345868
+    data2: 3701746981
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6436866996672093992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Pause
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Pause
+  Guid:
+    Data1: 728675580
+    Data2: 1286026393
+    Data3: -1447237462
+    Data4: -1774496435
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5692533644199844061}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6710234337124777574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Main Theme/Cycle
+  m_EditorClassIdentifier: 
+  Name: Cycle
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 288033980
+    data2: 3492274214
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7052378038280100621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Tile/Hive
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Tile/Hive
+  Guid:
+    Data1: 1483521081
+    Data2: 1153506094
+    Data3: 1359886264
+    Data4: -958992150
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2036149034274878636}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7256498069926828598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Paused
+  m_EditorClassIdentifier: 
+  Name: Paused
+  StudioPath: parameter:/Paused
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 800923421
+    data2: 2060741762
+  Type: 1
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7501968409988131138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Beemony/C
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Beemony/C
+  Guid:
+    Data1: 1395624498
+    Data2: 1289266421
+    Data3: 1006789797
+    Data4: 1668044833
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8656692364125462164}
+  - {fileID: -7175344320543138195}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7058
+--- !u!114 &7856181057859850671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Tile/Basic
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Tile/Basic
+  Guid:
+    Data1: 2033527198
+    Data2: 1324773387
+    Data3: 1312664990
+    Data4: -1589784183
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8344047270356360636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu
+  Guid:
+    Data1: 993204809
+    Data2: 1232177341
+    Data3: -561953892
+    Data4: 1364737187
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33882
+--- !u!114 &8921649803306945078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bee/Beemony/E 2
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bee/Beemony/E 2
+  Guid:
+    Data1: -1134031826
+    Data2: 1138727110
+    Data3: -1600207724
+    Data4: -247342778
+  Banks:
+  - {fileID: 4053519600137474634}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5157839585543999695}
+  - {fileID: 6271403728523298074}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5647
+--- !u!114 &8936116794341660166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/G/Beemony Mute
   m_EditorClassIdentifier: 
   Name: Beemony Mute
   StudioPath: 

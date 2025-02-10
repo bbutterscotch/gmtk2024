@@ -634,7 +634,14 @@ MonoBehaviour:
       Data2: 1242504950
       Data3: 2000316566
       Data4: 233577616
-    Path: event:/Bee Spawn
+    Path: event:/SFX/Bee/Spawn
+  beeArmouredSpawnSound:
+    Guid:
+      Data1: -1132776957
+      Data2: 1222683655
+      Data3: -880948546
+      Data4: 1846033651
+    Path: event:/SFX/Bee/Spawn Armoured
 --- !u!4 &261437395
 Transform:
   m_ObjectHideFlags: 0
@@ -672,7 +679,7 @@ MonoBehaviour:
       Data2: 1222045156
       Data3: 248553348
       Data4: 1930583719
-    Path: event:/Enemy Spawn
+    Path: event:/SFX/Enemy/Spawn
 --- !u!1 &280497513
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,14 +721,28 @@ MonoBehaviour:
       Data2: 1177954069
       Data3: 1160882562
       Data4: 540630932
-    Path: event:/Cycle Bell
+    Path: event:/SFX/Cycle/Bell
+  pauseSound:
+    Guid:
+      Data1: 728675580
+      Data2: 1286026393
+      Data3: -1447237462
+      Data4: -1774496435
+    Path: event:/SFX/UI/Pause
+  unpauseSound:
+    Guid:
+      Data1: -1949844767
+      Data2: 1222739814
+      Data3: 803699106
+      Data4: -484782869
+    Path: event:/SFX/UI/Unpause
   music:
     Guid:
       Data1: -94178437
       Data2: 1121069517
       Data3: 1870735784
       Data4: -2073880398
-    Path: event:/Music
+    Path: event:/Music/Main Theme
   pause: 0
 --- !u!4 &280497515
 Transform:
@@ -19862,7 +19883,7 @@ MonoBehaviour:
       Data2: 1303484478
       Data3: 1975516807
       Data4: 1202703034
-    Path: event:/UI Hover
+    Path: event:/SFX/UI/Hover
 --- !u!114 &891533838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19995,6 +20016,34 @@ MonoBehaviour:
   page1: {fileID: 1144539604}
   page2: {fileID: 1166188117}
   page: 0
+  openPanelSound:
+    Guid:
+      Data1: -798613278
+      Data2: 1217080393
+      Data3: -1507454544
+      Data4: 681895724
+    Path: event:/SFX/UI/Select
+  closePanelSound:
+    Guid:
+      Data1: 201164619
+      Data2: 1303484478
+      Data3: 1975516807
+      Data4: 1202703034
+    Path: event:/SFX/UI/Hover
+  openBookSound:
+    Guid:
+      Data1: -798613278
+      Data2: 1217080393
+      Data3: -1507454544
+      Data4: 681895724
+    Path: event:/SFX/UI/Select
+  closeBookSound:
+    Guid:
+      Data1: 201164619
+      Data2: 1303484478
+      Data3: 1975516807
+      Data4: 1202703034
+    Path: event:/SFX/UI/Hover
 --- !u!1 &897303420
 GameObject:
   m_ObjectHideFlags: 0
@@ -39040,14 +39089,14 @@ MonoBehaviour:
       Data2: 1121069517
       Data3: 1870735784
       Data4: -2073880398
-    Path: event:/Music
+    Path: event:/Music/Main Theme
   queenStartSound:
     Guid:
       Data1: 1863808012
       Data2: 1176874300
       Data3: 333844615
       Data4: 1417393681
-    Path: event:/Tile Queen Bee
+    Path: event:/SFX/Tile/Queen
   center: {x: 0, y: 0, z: 0}
   startTile: {x: 0, y: 2, z: 0}
 --- !u!1 &1557918954
@@ -41204,21 +41253,21 @@ MonoBehaviour:
       Data2: 1324773387
       Data3: 1312664990
       Data4: -1589784183
-    Path: event:/Tile Basic
+    Path: event:/SFX/Tile/Basic
   tileAdvancedSound:
     Guid:
       Data1: -1305114401
       Data2: 1131772131
       Data3: 232816036
       Data4: 244895855
-    Path: event:/Tile Advanced
+    Path: event:/SFX/Tile/Advanced
   music:
     Guid:
       Data1: -94178437
       Data2: 1121069517
       Data3: 1870735784
       Data4: -2073880398
-    Path: event:/Music
+    Path: event:/Music/Main Theme
 --- !u!4 &2041376578
 Transform:
   m_ObjectHideFlags: 0
@@ -41269,7 +41318,7 @@ MonoBehaviour:
       Data2: 1121069517
       Data3: 1870735784
       Data4: -2073880398
-    Path: event:/Music
+    Path: event:/Music/Main Theme
 --- !u!4 &2057232042
 Transform:
   m_ObjectHideFlags: 0

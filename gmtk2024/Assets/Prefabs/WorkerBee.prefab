@@ -54,21 +54,21 @@ MonoBehaviour:
       Data2: 1288200908
       Data3: 1626064297
       Data4: 1545551254
-    Path: event:/Bee Death
+    Path: event:/SFX/Bee/Death
   beeAttackSound:
     Guid:
       Data1: -1404745072
       Data2: 1170825079
       Data3: 546813345
       Data4: -669262715
-    Path: event:/Bee Attack
+    Path: event:/SFX/Bee/Attack
   cycleDepositSound:
     Guid:
       Data1: 584551521
       Data2: 1097762054
       Data3: -947126116
       Data4: 1602256186
-    Path: event:/Cycle Deposit
+    Path: event:/SFX/Cycle/Deposit
   pathIndex: 0
 --- !u!61 &2286493296233877179
 BoxCollider2D:

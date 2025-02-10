@@ -18,6 +18,8 @@ public class CycleController : MonoBehaviour
     BeeSpawner beeSpawner;
     HiveResources hv;
     [SerializeField] private EventReference cycleBellSound;
+    [SerializeField] private EventReference pauseSound;
+    [SerializeField] private EventReference unpauseSound;
     [SerializeField] private EventReference music;
     public bool pause = false;
 
@@ -105,9 +107,11 @@ public class CycleController : MonoBehaviour
         if (pause)
         {
             Time.timeScale = 0;
+            AudioController.instance.PlayOneShot(pauseSound, this.transform.position);
         } else
         {
             Time.timeScale = 1.0f;
+            AudioController.instance.PlayOneShot(unpauseSound, this.transform.position);
         }
     }
 

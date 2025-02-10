@@ -15,6 +15,7 @@ public class BeeSpawner : MonoBehaviour
     [SerializeField] Sprite fighterBee;
 
     [SerializeField] private EventReference beeSpawnSound;
+    [SerializeField] private EventReference beeArmouredSpawnSound;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class BeeSpawner : MonoBehaviour
         newBee.tag = "FighterBee";
         SpriteRenderer newSprite = newBee.GetComponent<SpriteRenderer>();
         newSprite.sprite = fighterBee;
-        AudioController.instance.PlayOneShot(beeSpawnSound, this.transform.position);
+        AudioController.instance.PlayOneShot(beeArmouredSpawnSound, this.transform.position);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
     }
 }

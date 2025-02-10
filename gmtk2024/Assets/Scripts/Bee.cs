@@ -258,6 +258,7 @@ public class Bee : MonoBehaviour
                 if (this.gameObject.tag == "FighterBee")
                 {
                     Destroy(collision.gameObject);
+                    AudioController.instance.PlayOneShot(beeAttackSound, this.transform.position);
                 }
                 //Debug.Log("Enemy!");
                 hv.bees--;

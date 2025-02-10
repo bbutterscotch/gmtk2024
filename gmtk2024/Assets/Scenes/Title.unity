@@ -1126,7 +1126,7 @@ MonoBehaviour:
       Data2: 1232177341
       Data3: -561953892
       Data4: 1364737187
-    Path: event:/Music 2
+    Path: event:/Music/Menu
 --- !u!4 &1023356725
 Transform:
   m_ObjectHideFlags: 0

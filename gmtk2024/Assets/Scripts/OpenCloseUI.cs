@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class OpenCloseUI : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class OpenCloseUI : MonoBehaviour
     public GameObject page1;
     public GameObject page2;
     public int page = 0;
+
+    [SerializeField] private EventReference openPanelSound;
+    [SerializeField] private EventReference closePanelSound;
+    [SerializeField] private EventReference openBookSound;
+    [SerializeField] private EventReference closeBookSound;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +54,7 @@ public class OpenCloseUI : MonoBehaviour
     }
 
     public void OpenResourcePanel() {
+        AudioController.instance.PlayOneShot(openPanelSound, this.transform.position);
         resourcePanelOpen = true;
         resourcesPanel.SetActive(true);
         resourcePanelClosed.SetActive(false);
@@ -59,6 +66,7 @@ public class OpenCloseUI : MonoBehaviour
     }
 
     public void CloseResourcePanel() {
+        AudioController.instance.PlayOneShot(closePanelSound, this.transform.position);
         resourcePanelOpen = false;
         resourcesPanel.SetActive(false);
         resourcePanelClosed.SetActive(true);
@@ -72,16 +80,19 @@ public class OpenCloseUI : MonoBehaviour
     public void BookClick()
     {
         if (page == 0) {
+            AudioController.instance.PlayOneShot(openBookSound, this.transform.position);
             page = 1;
             page0.SetActive(false);
             page1.SetActive(true);
             page2.SetActive(false);
         } else if (page == 1) {
+            AudioController.instance.PlayOneShot(closeBookSound, this.transform.position);
             page = 2;
             page0.SetActive(false);
             page1.SetActive(false);
             page2.SetActive(true);
         } else if (page == 2) {
+            AudioController.instance.PlayOneShot(closeBookSound, this.transform.position);
             page = 0;
             page0.SetActive(true);
             page1.SetActive(false);
