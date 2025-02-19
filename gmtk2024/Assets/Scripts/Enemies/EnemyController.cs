@@ -7,7 +7,6 @@ public class EnemyController : MonoBehaviour
 {
     private int beesKilled = 0;
     [SerializeField] int beesToKill = 2;
-    [SerializeField] private EventReference beeDeathSound;
 
     private void Start()
     {
@@ -17,7 +16,6 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         beesKilled++;
-        AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
         if (beesKilled == beesToKill)
         {
             Destroy(gameObject);

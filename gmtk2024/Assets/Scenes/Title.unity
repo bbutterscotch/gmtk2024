@@ -1122,10 +1122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music:
     Guid:
-      Data1: 993204809
-      Data2: 1232177341
-      Data3: -561953892
-      Data4: 1364737187
+      Data1: -1295805216
+      Data2: 1288650261
+      Data3: 974622342
+      Data4: 741197129
+    Path: event:/Music/Menu
+  menuMusic:
+    Guid:
+      Data1: -1295805216
+      Data2: 1288650261
+      Data3: 974622342
+      Data4: 741197129
     Path: event:/Music/Menu
 --- !u!4 &1023356725
 Transform:

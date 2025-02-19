@@ -145,3 +145,10 @@ MonoBehaviour:
       Data3: 1345848971
       Data4: -1529793205
     Path: event:/SFX/Enemy/Deny Resource
+  enemySpawnSound:
+    Guid:
+      Data1: 10639012
+      Data2: 1222045156
+      Data3: 248553348
+      Data4: 1930583719
+    Path: event:/SFX/Enemy/Spawn

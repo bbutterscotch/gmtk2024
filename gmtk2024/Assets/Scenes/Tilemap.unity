@@ -39565,7 +39565,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 15
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: 0, y: -1, z: 0}
@@ -39580,7 +39580,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 15
+      m_AnimationSpeed: 15.000001
       m_AnimationTimeOffset: 0
       m_Flags: 1
   - first: {x: -1, y: 0, z: 0}
@@ -39640,7 +39640,7 @@ Tilemap:
       - {fileID: 448269176, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: 1776071314, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
       - {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-      m_AnimationSpeed: 15.000001
+      m_AnimationSpeed: 15
       m_AnimationTimeOffset: 0
       m_Flags: 1
   m_TileAssetArray:
@@ -41261,6 +41261,13 @@ MonoBehaviour:
       Data3: 232816036
       Data4: 244895855
     Path: event:/SFX/Tile/Advanced
+  tileHiveSound:
+    Guid:
+      Data1: 1483521081
+      Data2: 1153506094
+      Data3: 1359886264
+      Data4: -958992150
+    Path: event:/SFX/Tile/Hive
   cellClickSound:
     Guid:
       Data1: 201164619
@@ -41326,6 +41333,13 @@ MonoBehaviour:
       Data3: 1870735784
       Data4: -2073880398
     Path: event:/Music/Main Theme
+  menuMusic:
+    Guid:
+      Data1: -1295805216
+      Data2: 1288650261
+      Data3: 974622342
+      Data4: 741197129
+    Path: event:/Music/Menu
 --- !u!4 &2057232042
 Transform:
   m_ObjectHideFlags: 0

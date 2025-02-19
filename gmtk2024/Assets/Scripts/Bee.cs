@@ -193,7 +193,7 @@ public class Bee : MonoBehaviour
                     hv.bees--;
                     Destroy(gameObject);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
-                    AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+                    //AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
                 }
 
                 // reset path + update tiles
@@ -263,7 +263,7 @@ public class Bee : MonoBehaviour
                 //Debug.Log("Enemy!");
                 hv.bees--;
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
-                AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+                //AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
             }
             
             
@@ -283,7 +283,7 @@ public class Bee : MonoBehaviour
                     Destroy(collision.gameObject);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Beemony", hv.bees);
                     AudioController.instance.PlayOneShot(beeAttackSound, this.transform.position);
-                    AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
+                    //AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
 
                 } else
                 {
@@ -294,5 +294,10 @@ public class Bee : MonoBehaviour
             
         }
         // else wave hi to other bee
+    }
+
+    private void OnDestroy()
+    {
+        AudioController.instance.PlayOneShot(beeDeathSound, transform.position);
     }
 }

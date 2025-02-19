@@ -15,7 +15,6 @@ public class BirdController : MonoBehaviour
     [SerializeField] private float timeAtCenter = 2f;
     HiveResources hv;
     [SerializeField] private int stolenHoney = 10;
-    [SerializeField] private EventReference beeDeathSound;
     PathFinder4 pf;
     private System.Random rand;
     private float delay = 1f;
@@ -81,7 +80,6 @@ public class BirdController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         beesKilled++;
-        AudioController.instance.PlayOneShot(beeDeathSound, this.transform.position);
         if (beesKilled == beesToKill)
         {
             Destroy(gameObject);

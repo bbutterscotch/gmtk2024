@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class HiveResources : MonoBehaviour
 {
@@ -44,26 +45,31 @@ public class HiveResources : MonoBehaviour
         {
             honey -= 4;
             wax -= 1;
+            AudioController.instance.SetMusicParameter("Pond", 1f);
         }
         else if (tileName == "Tile_Meadow_Drop" && nectar >= 3 && pollen >= 2) 
         {
             nectar -= 3;
             pollen -= 2;
+            AudioController.instance.SetMusicParameter("Meadow", 1f);
         }
         else if (tileName == "Tile_Beekeeper_Drop" && wax >= 3 && nectar >= 2) 
         {
             wax -= 3;
             nectar -= 2;
+            AudioController.instance.SetMusicParameter("Meadow", 1f);
         }
         else if (tileName == "Tile_Woodland_Drop" && wax >= 2 && nectar >= 2 && honey >= 1) 
         {
             wax -= 2;
             honey -= 1;
             nectar -= 2;
+            AudioController.instance.SetMusicParameter("Woodland", 1f);
         }
         else if (tileName == "Tile_Garden_Drop" && pollen >= 5) 
         {
             pollen -= 5;
+            AudioController.instance.SetMusicParameter("Garden", 1f);
         }
         else if (tileName == "Tile_Nursery_Spawn" && wax >= 10 && pollen >= 5 && honey >= 5)
         {
@@ -71,6 +77,7 @@ public class HiveResources : MonoBehaviour
             pollen -= 5;
             honey -= 5;
             nurseryTiles++;
+            AudioController.instance.SetMusicParameter("Nursery", 1f);
         } 
         else if (tileName == "Tile_HoneySuper_Spawn" && royalJelly >= 15 && honey >= 10 && nectar >= 5 && pollen >= 5)
         {
@@ -79,6 +86,7 @@ public class HiveResources : MonoBehaviour
             nectar -= 5;
             pollen -= 5;
             honeySuperTiles++;
+            AudioController.instance.SetMusicParameter("Super", 1f);
         }
         else if (tileName == "Tile_Armory_Spawn" && royalJelly >= 8 && wax >= 5 && nectar >= 5) 
         {
@@ -86,6 +94,7 @@ public class HiveResources : MonoBehaviour
             wax -= 5;
             nectar -= 5;
             armoryTiles++;
+            AudioController.instance.SetMusicParameter("Armoury", 1f);
         }
         else 
         { 

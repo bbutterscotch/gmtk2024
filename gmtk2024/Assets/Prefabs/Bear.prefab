@@ -51,13 +51,13 @@ MonoBehaviour:
   stepsToCenter: 20
   timeAtCenter: 2
   stolenHoney: 10
-  beeDeathSound:
+  denyResourceSound:
     Guid:
-      Data1: -1478753232
-      Data2: 1288200908
-      Data3: 1626064297
-      Data4: 1545551254
-    Path: event:/SFX/Bee/Death
+      Data1: 217264432
+      Data2: 1198004690
+      Data3: 1345848971
+      Data4: -1529793205
+    Path: event:/SFX/Enemy/Deny Resource
 --- !u!212 &7977677519792181488
 SpriteRenderer:
   m_ObjectHideFlags: 0

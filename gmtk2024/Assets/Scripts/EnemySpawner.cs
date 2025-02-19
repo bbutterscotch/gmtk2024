@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.path;
         int index = rand.Next(0, tiles.Count);
         Instantiate(enemy, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
-        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+        //AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnEnemy(Vector3Int loc)
@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.path;
         int index = rand.Next(0, tiles.Count);
         Instantiate(bear, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
-        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+        //AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnBear(Vector3Int loc)
@@ -85,7 +85,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.path;
         int index = rand.Next(0, tiles.Count);
         Instantiate(bird, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
-        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+        //AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnBird(Vector3Int loc)
@@ -99,7 +99,7 @@ public class EnemySpawner : MonoBehaviour
         tiles = pf.path;
         int index = rand.Next(0, tiles.Count);
         Instantiate(mite, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
-        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+        //AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnMite(Vector3Int loc)
@@ -126,7 +126,7 @@ public class EnemySpawner : MonoBehaviour
                 
             }
         }
-        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+        //AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     // Update is called once per frame

@@ -48,11 +48,11 @@ public class MapController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-
         // 12 tiles to start + 1 nursery tile
         unwalkable.SetTile(center, queenbeedropTile);
+        //AudioController.instance.SetAllParameters(0);
         AudioController.instance.PlayOneShot(queenStartSound, this.transform.position);
+        AudioController.instance.SetMusicParameter("Nursery", 1f);
         unwalkable.SetTile(center + Vector3Int.up, nurseryTile);
         hv.nurseryTiles++;
         walkable.SetTile(startTile, entranceTile);
@@ -68,27 +68,31 @@ public class MapController : MonoBehaviour
             if (i < 2)
             {
                 walkable.SetTile(positions[posIndex], gardenDropTile);
-                AudioController.instance.SetParameter(music, "Garden", 1, this.transform.position);
+                AudioController.instance.SetMusicParameter("Garden", 1f);
                 hv.gardenTiles++;
-            } else if (i < 4)
+            }
+            else if (i < 4)
             {
                 walkable.SetTile(positions[posIndex], woodlandDropTile);
-                AudioController.instance.SetParameter(music, "Woodland", 1, this.transform.position);
+                AudioController.instance.SetMusicParameter("Woodland", 1f);
                 hv.woodlandTiles++;
-            } else if (i < 6)
+            }
+            else if (i < 6)
             {
                 walkable.SetTile(positions[posIndex], meadowDropTile);
-                AudioController.instance.SetParameter(music, "Meadow", 1, this.transform.position);
+                AudioController.instance.SetMusicParameter("Meadow", 1f);
                 hv.meadowTiles++;
-            } else if (i < 9)
+            }
+            else if (i < 9)
             {
                 walkable.SetTile(positions[posIndex], pondDropTile);
-                AudioController.instance.SetParameter(music, "Pond", 1, this.transform.position);
+                AudioController.instance.SetMusicParameter("Pond", 1f);
                 hv.pondTiles++;
-            } else
+            }
+            else
             {
                 walkable.SetTile(positions[posIndex], beekeeperDropTile);
-                AudioController.instance.SetParameter(music, "Beekeeper", 1, this.transform.position);
+                AudioController.instance.SetMusicParameter("Beekeeper", 1f);
                 hv.beekeeperTiles++;
             }
             pf.placeInitialTile(positions[posIndex]);

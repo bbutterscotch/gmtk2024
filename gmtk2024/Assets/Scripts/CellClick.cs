@@ -62,8 +62,10 @@ public class CellClick : MonoBehaviour
 
     [SerializeField] private EventReference tileBasicSound;
     [SerializeField] private EventReference tileAdvancedSound;
+    [SerializeField] private EventReference tileHiveSound;
     [SerializeField] private EventReference cellClickSound;
     [SerializeField] private EventReference music;
+
     MapController mc;
 
     // Tile Neighbors
@@ -236,7 +238,8 @@ public class CellClick : MonoBehaviour
                     return;
                 }
                 tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y), selectedTile);
-                AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
+                Vector3 HivePos = tilemap.CellToWorld(tilemapPos);
+                AudioController.instance.PlayOneShot(tileHiveSound, HivePos);
                 //selectedTile = null;
             } else if (tilemap == mc.walkable && tile != null || other != null) {
                 //print("fail!");
@@ -273,20 +276,25 @@ public class CellClick : MonoBehaviour
                     }
                     tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y), selectedTile);
                     pf.placeNewTile(new Vector3Int(tilemapPos.x, tilemapPos.y));
-                    AudioController.instance.PlayOneShot(tileBasicSound, this.transform.position);
+                    Vector3 BasicPos = tilemap.CellToWorld(tilemapPos);
+                    AudioController.instance.PlayOneShot(tileBasicSound, BasicPos);
 
                     if (selectedTile.name == woodlandTileName) {
                         Debug.Log("WOODLAND UPGRADE");
                         if (replaceMatches(tilemapPos, forestTile))
                         {
                             enemySpawner.spawnBear(tilemapPos);
+                            AudioController.instance.SetMusicParameter("Forest", 1f);
+                            Vector3 forestPos = tilemap.CellToWorld(tilemapPos) + tilemap.tileAnchor;
+                            AudioController.instance.PlayOneShot(tileAdvancedSound, forestPos);
                         }
-                        AudioController.instance.SetParameter(music, "Forest", 1, this.transform.position);
-                        AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                     } else if (selectedTile.name == beekeeperTileName) {
-                        replaceMatches(tilemapPos, apiaryTile);
-                        AudioController.instance.SetParameter(music, "Apiary", 1, this.transform.position);
-                        AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
+                        if (replaceMatches(tilemapPos, apiaryTile))
+                        {
+                            AudioController.instance.SetMusicParameter("Apiary", 1f);
+                            Vector3 beekeeperPos = tilemap.CellToWorld(tilemapPos);
+                            AudioController.instance.PlayOneShot(tileAdvancedSound, beekeeperPos);
+                        }
                     } else if (selectedTile.name == gardenTileName || selectedTile.name == meadowTileName || selectedTile.name == pondTileName) {
                         AnimatedTile parkTile = null;
                         if (getTileType(selectedTile.name) == "Pond")
@@ -340,10 +348,13 @@ public class CellClick : MonoBehaviour
 
                             }
                             tilemap.SetTile(new Vector3Int(tilemapPos.x, tilemapPos.y, 0), parkTile);
+
+                            AudioController.instance.SetMusicParameter("Park", 1f);
+                            Vector3 ParkPos = tilemap.CellToWorld(tilemapPos);
+                            AudioController.instance.PlayOneShot(tileAdvancedSound, ParkPos);
+
                             // spawn dog
                             enemySpawner.spawnEnemy(new Vector3Int(tilemapPos.x, tilemapPos.y, 0));
-                            AudioController.instance.SetParameter(music, "Park", 1, this.transform.position);
-                            AudioController.instance.PlayOneShot(tileAdvancedSound, this.transform.position);
                         }
                         //print("gardens: " + gardenTiles + " | meadows: " + meadowTiles + " | ponds: " + pondTiles);
                         
