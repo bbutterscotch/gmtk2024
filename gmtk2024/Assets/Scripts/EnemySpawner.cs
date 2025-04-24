@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using FMODUnity;
+using System;
+using System.Reflection;
 
 public class EnemySpawner : MonoBehaviour
 {
 
-    PathFinder pf;
+    PathFinder4 pf;
     List<Vector3Int> tiles;
     MapController mc;
     Tilemap spriteMap;
     Tilemap walkable;
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject bear;
+    [SerializeField] GameObject bird;
     [SerializeField] GameObject mite;
     [SerializeField] private EventReference enemySpawnSound;
+    private System.Random rand;
 
     // Start is called before the first frame update
     void Start()
     {
-        pf = FindObjectOfType<PathFinder>();
-        mc = FindObjectOfType<MapController>();
+        rand = new System.Random();
+        pf = FindFirstObjectByType<PathFinder4>();
+        mc = FindFirstObjectByType<MapController>();
         spriteMap = mc.spriteMap;
         walkable = mc.walkable;
     }
@@ -30,55 +35,89 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            int enemy = Random.Range(0, 3);
+            int enemy = rand.Next(0, 4);
             if (enemy == 0)
             {
                 spawnBear();
             } else if (enemy == 1)
             {
                 spawnEnemy();
-            } else
+            } else if (enemy == 2)
             {
                 spawnMites();
+            } else if (enemy == 3)
+            {
+                spawnBird();
             }
         }
     }
 
     public void spawnEnemy()
     {
-        tiles = pf.getTiles();
-        int index = Random.Range(0, tiles.Count);
+        tiles = pf.path;
+        int index = rand.Next(0, tiles.Count);
         Instantiate(enemy, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnEnemy(Vector3Int loc)
+    {
+        Instantiate(enemy, spriteMap.CellToWorld(loc), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnBear()
     {
-        tiles = pf.getTiles();
-        int index = Random.Range(0, tiles.Count);
+        tiles = pf.path;
+        int index = rand.Next(0, tiles.Count);
         Instantiate(bear, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnBear(Vector3Int loc)
+    {
+        Instantiate(bear, spriteMap.CellToWorld(loc), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnBird()
+    {
+        tiles = pf.path;
+        int index = rand.Next(0, tiles.Count);
+        Instantiate(bird, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnBird(Vector3Int loc)
+    {
+        Instantiate(bird, spriteMap.CellToWorld(loc), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnMite()
     {
-        tiles = pf.getTiles();
-        int index = Random.Range(0, tiles.Count);
+        tiles = pf.path;
+        int index = rand.Next(0, tiles.Count);
         Instantiate(mite, spriteMap.CellToWorld(tiles[index]), Quaternion.identity);
+        AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
+    }
+
+    public void spawnMite(Vector3Int loc)
+    {
+        Instantiate(mite, spriteMap.CellToWorld(loc), Quaternion.identity);
         AudioController.instance.PlayOneShot(enemySpawnSound, this.transform.position);
     }
 
     public void spawnMites()
     {
-        tiles = pf.getTiles();
-        Debug.Log("TEST");
-        int index = Random.Range(0, tiles.Count);
+        tiles = pf.path;
+        int index = rand.Next(0, tiles.Count);
         for (int x = -1; x <= 1; x++)
         {
             for (int y = -1; y <= 1; y++)
             {
                 if (walkable.HasTile(tiles[index] + new Vector3Int(x, y))) {
-                    int spawn = Random.Range(0, 2);
+                    int spawn = rand.Next(0, 2);
                     if (spawn == 1)
                     {
                         Instantiate(mite, spriteMap.CellToWorld(tiles[index] + new Vector3Int(x, y)), Quaternion.identity);

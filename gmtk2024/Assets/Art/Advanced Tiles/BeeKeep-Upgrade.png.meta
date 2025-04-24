@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -67,7 +67,7 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,8 +80,21 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -95,8 +108,317 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da6dec0b33fe1e4f9909535fbec8e36
+      internalID: 1781270553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7092a5347c462fc4c8ec97d9d4340554
+      internalID: -1662981075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386dcead125ab7447982349cd30c3640
+      internalID: 1851668920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d980a3e8cd15234fa52c7bcfe8a53ff
+      internalID: -613855086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 700
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5a9e94fb9f0b844b6da11fc71e7715
+      internalID: 1978637575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e5bf318b2333c4e8f523c5bbb871aa
+      internalID: 447376755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb272d0a8f8b3a14f8df88fa9fa5a475
+      internalID: -1041771331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dc9754f0b8de44fa3b489a686a4034
+      internalID: 300798952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_8
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd400da9469a4440b7563257be814f4
+      internalID: 2066226407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 350
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c385b0457e1f442acc92f9aae174cb
+      internalID: -1167784221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4940be790cfe041998357cc96248d4
+      internalID: -1614079872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f9717897b00f24ba89558c55fbabe3
+      internalID: 388119523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_12
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a642748efe42b7b4a907d7e060d058bc
+      internalID: -86327279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeeKeep-Upgrade_13
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 250
+        height: 350
+      alignment: 9
+      pivot: {x: 0.5, y: 0.355}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cac177d034086e42afa7c39effc5192
+      internalID: 1528469834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -106,7 +428,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BeeKeep-Upgrade_0: 1781270553
+      BeeKeep-Upgrade_1: -1662981075
+      BeeKeep-Upgrade_10: -1614079872
+      BeeKeep-Upgrade_11: 388119523
+      BeeKeep-Upgrade_12: -86327279
+      BeeKeep-Upgrade_13: 1528469834
+      BeeKeep-Upgrade_2: 1851668920
+      BeeKeep-Upgrade_3: -613855086
+      BeeKeep-Upgrade_4: 1978637575
+      BeeKeep-Upgrade_5: 447376755
+      BeeKeep-Upgrade_6: -1041771331
+      BeeKeep-Upgrade_7: 300798952
+      BeeKeep-Upgrade_8: 2066226407
+      BeeKeep-Upgrade_9: -1167784221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

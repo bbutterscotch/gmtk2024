@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mc = FindObjectOfType<MapController>();
+        mc = FindFirstObjectByType<MapController>();
         tilemap = mc.walkable;
         camera = GetComponent<Camera>();
         Vector3 newPos = tilemap.CellToWorld(mc.center);
