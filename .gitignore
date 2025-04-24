@@ -71,3 +71,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+gmtk2024/Library/SourceAssetDB
+gmtk2024/Library/Bee/fullprofile.json
+gmtk2024/Library/ArtifactDB
