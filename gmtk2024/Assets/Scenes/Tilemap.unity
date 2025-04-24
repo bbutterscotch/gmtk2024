@@ -38783,7 +38783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0474fe669f572c445b4ed2bbff25464a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39497,7 +39497,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -39610,8 +39610,6 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 6
     m_Data: {fileID: -1132424866, guid: 89bb76adcd7b91d47a046f49077edd49, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: b16879cc391e24744ad81a049b453657, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 7
     m_Data:
@@ -39634,8 +39632,6 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 7
     m_Data: {r: 1, g: 1, b: 1, a: 1}
-  - m_RefCount: 0
-    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
